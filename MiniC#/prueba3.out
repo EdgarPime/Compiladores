@@ -1,0 +1,1034 @@
+< linea 1 columnas:0-1 Token: T_MENOR
+*** Error linea 1.*** El caracter: ? ,No pertenece a MiniC# 
+php linea 1 columnas:2-5 Token: T_IDENTIFICADOR
+*** Error linea 6.*** El caracter: $ ,No pertenece a MiniC# 
+response linea 6 columnas:1-9 Token: T_IDENTIFICADOR
+= linea 6 columnas:10-11 Token: T_IGUAL
+getInstance linea 6 columnas:12-23 Token: T_IDENTIFICADOR
+() linea 6 columnas:23-25 Token: T_PARENTESIS
+; linea 6 columnas:25-26 Token: T_PUNTOYCOMA
+*** Error linea 7.*** El caracter: $ ,No pertenece a MiniC# 
+header linea 7 columnas:1-7 Token: T_IDENTIFICADOR
+= linea 7 columnas:10-11 Token: T_IGUAL
+getHeader linea 7 columnas:12-21 Token: T_IDENTIFICADOR
+() linea 7 columnas:21-23 Token: T_PARENTESIS
+; linea 7 columnas:23-24 Token: T_PUNTOYCOMA
+*** Error linea 8.*** El caracter: $ ,No pertenece a MiniC# 
+scripts linea 8 columnas:1-8 Token: T_IDENTIFICADOR
+= linea 8 columnas:10-11 Token: T_IGUAL
+getScripts linea 8 columnas:12-22 Token: T_IDENTIFICADOR
+() linea 8 columnas:22-24 Token: T_PARENTESIS
+; linea 8 columnas:24-25 Token: T_PUNTOYCOMA
+*** Error linea 9.*** El caracter: $ ,No pertenece a MiniC# 
+export linea 9 columnas:1-7 Token: T_IDENTIFICADOR
+= linea 9 columnas:8-9 Token: T_IGUAL
+new linea 9 columnas:10-13 Token: T_IDENTIFICADOR
+Export linea 9 columnas:14-20 Token: T_IDENTIFICADOR
+() linea 9 columnas:20-22 Token: T_PARENTESIS
+; linea 9 columnas:22-23 Token: T_PUNTOYCOMA
+*** Error linea 12.*** El caracter: $ ,No pertenece a MiniC# 
+sub_part linea 12 columnas:1-9 Token: T_IDENTIFICADOR
+= linea 12 columnas:11-12 Token: T_IGUAL
+*** Error linea 12.*** El caracter: ' ,No pertenece a MiniC# 
+*** Error linea 12.*** El caracter: _export ,No pertenece a MiniC# 
+*** Error linea 12.*** El caracter: ' ,No pertenece a MiniC# 
+; linea 12 columnas:22-23 Token: T_PUNTOYCOMA
+*** Error linea 13.*** El caracter: $ ,No pertenece a MiniC# 
+url_query linea 13 columnas:1-10 Token: T_IDENTIFICADOR
+. linea 13 columnas:11-12 Token: T_PUNTO
+= linea 13 columnas:12-13 Token: T_IGUAL
+*** Error linea 13.*** El caracter: ' ,No pertenece a MiniC# 
+*** Error linea 13.*** El caracter: & ,No pertenece a MiniC# 
+amp linea 13 columnas:16-19 Token: T_IDENTIFICADOR
+; linea 13 columnas:19-20 Token: T_PUNTOYCOMA
+goto linea 13 columnas:20-24 Token: T_IDENTIFICADOR
+= linea 13 columnas:24-25 Token: T_IGUAL
+db_export linea 13 columnas:25-34 Token: T_IDENTIFICADOR
+. linea 13 columnas:34-35 Token: T_PUNTO
+php linea 13 columnas:35-38 Token: T_IDENTIFICADOR
+*** Error linea 13.*** El caracter: ' ,No pertenece a MiniC# 
+; linea 13 columnas:39-40 Token: T_PUNTOYCOMA
+list linea 14 columnas:0-4 Token: T_IDENTIFICADOR
+( linea 14 columnas:4-5 Token: T_PARENIZQ
+*** Error linea 15.*** El caracter: $ ,No pertenece a MiniC# 
+tables linea 15 columnas:5-11 Token: T_IDENTIFICADOR
+, linea 15 columnas:11-12 Token: T_COMA
+*** Error linea 16.*** El caracter: $ ,No pertenece a MiniC# 
+num_tables linea 16 columnas:5-15 Token: T_IDENTIFICADOR
+, linea 16 columnas:15-16 Token: T_COMA
+*** Error linea 17.*** El caracter: $ ,No pertenece a MiniC# 
+total_num_tables linea 17 columnas:5-21 Token: T_IDENTIFICADOR
+, linea 17 columnas:21-22 Token: T_COMA
+*** Error linea 18.*** El caracter: $ ,No pertenece a MiniC# 
+sub_part linea 18 columnas:5-13 Token: T_IDENTIFICADOR
+, linea 18 columnas:13-14 Token: T_COMA
+*** Error linea 19.*** El caracter: $ ,No pertenece a MiniC# 
+is_show_stats linea 19 columnas:5-18 Token: T_IDENTIFICADOR
+, linea 19 columnas:18-19 Token: T_COMA
+*** Error linea 20.*** El caracter: $ ,No pertenece a MiniC# 
+db_is_system_schema linea 20 columnas:5-24 Token: T_IDENTIFICADOR
+, linea 20 columnas:24-25 Token: T_COMA
+*** Error linea 21.*** El caracter: $ ,No pertenece a MiniC# 
+tooltip_truename linea 21 columnas:5-21 Token: T_IDENTIFICADOR
+, linea 21 columnas:21-22 Token: T_COMA
+*** Error linea 22.*** El caracter: $ ,No pertenece a MiniC# 
+tooltip_aliasname linea 22 columnas:5-22 Token: T_IDENTIFICADOR
+, linea 22 columnas:22-23 Token: T_COMA
+*** Error linea 23.*** El caracter: $ ,No pertenece a MiniC# 
+pos linea 23 columnas:5-8 Token: T_IDENTIFICADOR
+) linea 24 columnas:0-1 Token: T_PARENDER
+= linea 24 columnas:2-3 Token: T_IGUAL
+getDbInfo linea 24 columnas:4-13 Token: T_IDENTIFICADOR
+( linea 24 columnas:13-14 Token: T_PARENIZQ
+*** Error linea 24.*** El caracter: $ ,No pertenece a MiniC# 
+db linea 24 columnas:15-17 Token: T_IDENTIFICADOR
+, linea 24 columnas:17-18 Token: T_COMA
+isset linea 24 columnas:19-24 Token: T_IDENTIFICADOR
+( linea 24 columnas:24-25 Token: T_PARENIZQ
+*** Error linea 24.*** El caracter: $ ,No pertenece a MiniC# 
+sub_part linea 24 columnas:26-34 Token: T_IDENTIFICADOR
+) linea 24 columnas:34-35 Token: T_PARENDER
+) linea 24 columnas:35-36 Token: T_PARENDER
+; linea 24 columnas:36-37 Token: T_PUNTOYCOMA
+*** Error linea 25.*** El caracter: /* ,No pertenece a MiniC# 
+* linea 25 columnas:2-3 Token: T_MULTIPLICACION
+* linea 26 columnas:1-2 Token: T_MULTIPLICACION
+Displays linea 26 columnas:3-11 Token: T_IDENTIFICADOR
+the linea 26 columnas:12-15 Token: T_IDENTIFICADOR
+form linea 26 columnas:16-20 Token: T_IDENTIFICADOR
+* linea 27 columnas:1-2 Token: T_MULTIPLICACION
+/ linea 27 columnas:2-3 Token: T_DIVISION
+IF linea 29 columnas:0-2 Token: T_IDENTIFICADOR
+( linea 29 columnas:3-4 Token: T_PARENIZQ
+*** Error linea 29.*** El caracter: $ ,No pertenece a MiniC# 
+num_tables linea 29 columnas:5-15 Token: T_IDENTIFICADOR
+< linea 29 columnas:16-17 Token: T_MENOR
+1 linea 29 columnas:18-19 Token: T_CONST_ENTERO
+) linea 29 columnas:19-20 Token: T_PARENDER
+{ linea 29 columnas:21-22 Token: T_LLAVEIZQ
+*** Error linea 30.*** El caracter: $ ,No pertenece a MiniC# 
+response linea 30 columnas:5-13 Token: T_IDENTIFICADOR
+= linea 30 columnas:14-15 Token: T_IGUAL
+addHTML linea 30 columnas:16-23 Token: T_IDENTIFICADOR
+( linea 30 columnas:23-24 Token: T_PARENIZQ
+*** Error linea 30.*** El caracter: ' ,No pertenece a MiniC# 
+No linea 30 columnas:25-27 Token: T_IDENTIFICADOR
+tables linea 30 columnas:28-34 Token: T_IDENTIFICADOR
+found linea 30 columnas:35-40 Token: T_IDENTIFICADOR
+in linea 30 columnas:41-43 Token: T_IDENTIFICADOR
+database linea 30 columnas:44-52 Token: T_IDENTIFICADOR
+. linea 30 columnas:52-53 Token: T_PUNTO
+*** Error linea 30.*** El caracter: ' ,No pertenece a MiniC# 
+) linea 30 columnas:54-55 Token: T_PARENDER
+; linea 30 columnas:55-56 Token: T_PUNTOYCOMA
+eXIt linea 31 columnas:4-8 Token: T_IDENTIFICADOR
+; linea 31 columnas:8-9 Token: T_PUNTOYCOMA
+} linea 32 columnas:0-1 Token: T_LLAVEDER
+*** Error linea 33.*** El caracter: $ ,No pertenece a MiniC# 
+multi_values linea 33 columnas:3-15 Token: T_IDENTIFICADOR
+= linea 33 columnas:17-18 Token: T_IGUAL
+*** Error linea 33.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 33 columnas:20-21 Token: T_MENOR
+div linea 33 columnas:21-24 Token: T_IDENTIFICADOR
+class linea 33 columnas:25-30 Token: T_CLASS
+= linea 33 columnas:30-31 Token: T_IGUAL
+"export_table_list_container" linea 33 columnas:31-60 Token: T_CONST_STRING
+> linea 33 columnas:60-61 Token: T_MAYOR
+*** Error linea 33.*** El caracter: ' ,No pertenece a MiniC# 
+; linea 33 columnas:62-63 Token: T_PUNTOYCOMA
+iF linea 34 columnas:0-2 Token: T_IDENTIFICADOR
+( linea 34 columnas:3-4 Token: T_PARENIZQ
+isset linea 34 columnas:4-9 Token: T_IDENTIFICADOR
+( linea 34 columnas:9-10 Token: T_PARENIZQ
+*** Error linea 34.*** El caracter: $ ,No pertenece a MiniC# 
+*** Error linea 34.*** El caracter: _GET ,No pertenece a MiniC# 
+[ linea 34 columnas:15-16 Token: T_CORCHIZQ
+*** Error linea 34.*** El caracter: ' ,No pertenece a MiniC# 
+structure_or_data_forced linea 34 columnas:17-41 Token: T_IDENTIFICADOR
+*** Error linea 34.*** El caracter: ' ,No pertenece a MiniC# 
+] linea 34 columnas:42-43 Token: T_CORCHDER
+) linea 34 columnas:43-44 Token: T_PARENDER
+) linea 34 columnas:44-45 Token: T_PARENDER
+{ linea 34 columnas:46-47 Token: T_LLAVEIZQ
+*** Error linea 35.*** El caracter: $ ,No pertenece a MiniC# 
+force_val linea 35 columnas:5-14 Token: T_IDENTIFICADOR
+= linea 35 columnas:15-16 Token: T_IGUAL
+htmlspecialchars linea 35 columnas:17-33 Token: T_IDENTIFICADOR
+( linea 35 columnas:33-34 Token: T_PARENIZQ
+*** Error linea 35.*** El caracter: $ ,No pertenece a MiniC# 
+*** Error linea 35.*** El caracter: _GET ,No pertenece a MiniC# 
+[ linea 35 columnas:39-40 Token: T_CORCHIZQ
+*** Error linea 35.*** El caracter: ' ,No pertenece a MiniC# 
+structure_or_data_forced linea 35 columnas:41-65 Token: T_IDENTIFICADOR
+*** Error linea 35.*** El caracter: ' ,No pertenece a MiniC# 
+] linea 35 columnas:66-67 Token: T_CORCHDER
+) linea 35 columnas:67-68 Token: T_PARENDER
+; linea 35 columnas:68-69 Token: T_PUNTOYCOMA
+} linea 36 columnas:0-1 Token: T_LLAVEDER
+eLSe linea 36 columnas:2-6 Token: T_IDENTIFICADOR
+{ linea 36 columnas:7-8 Token: T_LLAVEIZQ
+*** Error linea 37.*** El caracter: $ ,No pertenece a MiniC# 
+force_val linea 37 columnas:5-14 Token: T_IDENTIFICADOR
+= linea 37 columnas:15-16 Token: T_IGUAL
+0 linea 37 columnas:17-18 Token: T_CONST_ENTERO
+; linea 37 columnas:18-19 Token: T_PUNTOYCOMA
+} linea 38 columnas:0-1 Token: T_LLAVEDER
+*** Error linea 39.*** El caracter: $ ,No pertenece a MiniC# 
+multi_values linea 39 columnas:1-13 Token: T_IDENTIFICADOR
+. linea 39 columnas:14-15 Token: T_PUNTO
+= linea 39 columnas:15-16 Token: T_IGUAL
+*** Error linea 39.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 39 columnas:18-19 Token: T_MENOR
+input linea 39 columnas:19-24 Token: T_IDENTIFICADOR
+type linea 39 columnas:25-29 Token: T_IDENTIFICADOR
+= linea 39 columnas:29-30 Token: T_IGUAL
+"hidden" linea 39 columnas:30-38 Token: T_CONST_STRING
+name linea 39 columnas:39-43 Token: T_IDENTIFICADOR
+= linea 39 columnas:43-44 Token: T_IGUAL
+"structure_or_data_forced" linea 39 columnas:44-70 Token: T_CONST_STRING
+value linea 39 columnas:71-76 Token: T_IDENTIFICADOR
+= linea 39 columnas:76-77 Token: T_IGUAL
+"'
+    . $force_val . '" linea 39 columnas:77-102 Token: T_CONST_STRING
+> linea 39 columnas:102-103 Token: T_MAYOR
+*** Error linea 39.*** El caracter: ' ,No pertenece a MiniC# 
+; linea 39 columnas:104-105 Token: T_PUNTOYCOMA
+*** Error linea 40.*** El caracter: $ ,No pertenece a MiniC# 
+multi_values linea 40 columnas:1-13 Token: T_IDENTIFICADOR
+. linea 40 columnas:14-15 Token: T_PUNTO
+= linea 40 columnas:15-16 Token: T_IGUAL
+*** Error linea 40.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 40 columnas:18-19 Token: T_MENOR
+table linea 40 columnas:19-24 Token: T_IDENTIFICADOR
+class linea 40 columnas:25-30 Token: T_CLASS
+= linea 40 columnas:30-31 Token: T_IGUAL
+"export_table_select" linea 40 columnas:31-52 Token: T_CONST_STRING
+> linea 40 columnas:52-53 Token: T_MAYOR
+*** Error linea 40.*** El caracter: ' ,No pertenece a MiniC# 
+. linea 41 columnas:4-5 Token: T_PUNTO
+*** Error linea 41.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 41 columnas:7-8 Token: T_MENOR
+thead linea 41 columnas:8-13 Token: T_IDENTIFICADOR
+> linea 41 columnas:13-14 Token: T_MAYOR
+< linea 41 columnas:14-15 Token: T_MENOR
+tr linea 41 columnas:15-17 Token: T_IDENTIFICADOR
+> linea 41 columnas:17-18 Token: T_MAYOR
+< linea 41 columnas:18-19 Token: T_MENOR
+th linea 41 columnas:19-21 Token: T_IDENTIFICADOR
+> linea 41 columnas:21-22 Token: T_MAYOR
+< linea 41 columnas:22-23 Token: T_MENOR
+/ linea 41 columnas:23-24 Token: T_DIVISION
+th linea 41 columnas:24-26 Token: T_IDENTIFICADOR
+> linea 41 columnas:26-27 Token: T_MAYOR
+*** Error linea 41.*** El caracter: ' ,No pertenece a MiniC# 
+. linea 42 columnas:4-5 Token: T_PUNTO
+*** Error linea 42.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 42 columnas:7-8 Token: T_MENOR
+th linea 42 columnas:8-10 Token: T_IDENTIFICADOR
+> linea 42 columnas:10-11 Token: T_MAYOR
+*** Error linea 42.*** El caracter: ' ,No pertenece a MiniC# 
+. linea 42 columnas:13-14 Token: T_PUNTO
+*** Error linea 42.*** El caracter: _ ,No pertenece a MiniC# 
+*** Error linea 42.*** El caracter: _ ,No pertenece a MiniC# 
+( linea 42 columnas:17-18 Token: T_PARENIZQ
+*** Error linea 42.*** El caracter: ' ,No pertenece a MiniC# 
+Tables linea 42 columnas:19-25 Token: T_IDENTIFICADOR
+*** Error linea 42.*** El caracter: ' ,No pertenece a MiniC# 
+) linea 42 columnas:26-27 Token: T_PARENDER
+. linea 42 columnas:28-29 Token: T_PUNTO
+*** Error linea 42.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 42 columnas:31-32 Token: T_MENOR
+/ linea 42 columnas:32-33 Token: T_DIVISION
+th linea 42 columnas:33-35 Token: T_IDENTIFICADOR
+> linea 42 columnas:35-36 Token: T_MAYOR
+*** Error linea 42.*** El caracter: ' ,No pertenece a MiniC# 
+. linea 43 columnas:4-5 Token: T_PUNTO
+*** Error linea 43.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 43 columnas:7-8 Token: T_MENOR
+th linea 43 columnas:8-10 Token: T_IDENTIFICADOR
+class linea 43 columnas:11-16 Token: T_CLASS
+= linea 43 columnas:16-17 Token: T_IGUAL
+"export_structure" linea 43 columnas:17-35 Token: T_CONST_STRING
+> linea 43 columnas:35-36 Token: T_MAYOR
+*** Error linea 43.*** El caracter: ' ,No pertenece a MiniC# 
+. linea 43 columnas:38-39 Token: T_PUNTO
+*** Error linea 43.*** El caracter: _ ,No pertenece a MiniC# 
+*** Error linea 43.*** El caracter: _ ,No pertenece a MiniC# 
+( linea 43 columnas:42-43 Token: T_PARENIZQ
+*** Error linea 43.*** El caracter: ' ,No pertenece a MiniC# 
+Structure linea 43 columnas:44-53 Token: T_IDENTIFICADOR
+*** Error linea 43.*** El caracter: ' ,No pertenece a MiniC# 
+) linea 43 columnas:54-55 Token: T_PARENDER
+. linea 43 columnas:56-57 Token: T_PUNTO
+*** Error linea 43.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 43 columnas:59-60 Token: T_MENOR
+/ linea 43 columnas:60-61 Token: T_DIVISION
+th linea 43 columnas:61-63 Token: T_IDENTIFICADOR
+> linea 43 columnas:63-64 Token: T_MAYOR
+*** Error linea 43.*** El caracter: ' ,No pertenece a MiniC# 
+. linea 44 columnas:4-5 Token: T_PUNTO
+*** Error linea 44.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 44 columnas:7-8 Token: T_MENOR
+th linea 44 columnas:8-10 Token: T_IDENTIFICADOR
+class linea 44 columnas:11-16 Token: T_CLASS
+= linea 44 columnas:16-17 Token: T_IGUAL
+"export_data" linea 44 columnas:17-30 Token: T_CONST_STRING
+> linea 44 columnas:30-31 Token: T_MAYOR
+*** Error linea 44.*** El caracter: ' ,No pertenece a MiniC# 
+. linea 44 columnas:33-34 Token: T_PUNTO
+*** Error linea 44.*** El caracter: _ ,No pertenece a MiniC# 
+*** Error linea 44.*** El caracter: _ ,No pertenece a MiniC# 
+( linea 44 columnas:37-38 Token: T_PARENIZQ
+*** Error linea 44.*** El caracter: ' ,No pertenece a MiniC# 
+Data linea 44 columnas:39-43 Token: T_IDENTIFICADOR
+*** Error linea 44.*** El caracter: ' ,No pertenece a MiniC# 
+) linea 44 columnas:44-45 Token: T_PARENDER
+. linea 44 columnas:46-47 Token: T_PUNTO
+*** Error linea 44.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 44 columnas:49-50 Token: T_MENOR
+/ linea 44 columnas:50-51 Token: T_DIVISION
+th linea 44 columnas:51-53 Token: T_IDENTIFICADOR
+> linea 44 columnas:53-54 Token: T_MAYOR
+*** Error linea 44.*** El caracter: ' ,No pertenece a MiniC# 
+. linea 45 columnas:4-5 Token: T_PUNTO
+*** Error linea 45.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 45 columnas:7-8 Token: T_MENOR
+/ linea 45 columnas:8-9 Token: T_DIVISION
+tr linea 45 columnas:9-11 Token: T_IDENTIFICADOR
+> linea 45 columnas:11-12 Token: T_MAYOR
+< linea 45 columnas:12-13 Token: T_MENOR
+tr linea 45 columnas:13-15 Token: T_IDENTIFICADOR
+> linea 45 columnas:15-16 Token: T_MAYOR
+*** Error linea 45.*** El caracter: ' ,No pertenece a MiniC# 
+. linea 46 columnas:4-5 Token: T_PUNTO
+*** Error linea 46.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 46 columnas:7-8 Token: T_MENOR
+td linea 46 columnas:8-10 Token: T_IDENTIFICADOR
+> linea 46 columnas:10-11 Token: T_MAYOR
+< linea 46 columnas:11-12 Token: T_MENOR
+/ linea 46 columnas:12-13 Token: T_DIVISION
+td linea 46 columnas:13-15 Token: T_IDENTIFICADOR
+> linea 46 columnas:15-16 Token: T_MAYOR
+*** Error linea 46.*** El caracter: ' ,No pertenece a MiniC# 
+. linea 47 columnas:4-5 Token: T_PUNTO
+*** Error linea 47.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 47 columnas:7-8 Token: T_MENOR
+td linea 47 columnas:8-10 Token: T_IDENTIFICADOR
+class linea 47 columnas:11-16 Token: T_CLASS
+= linea 47 columnas:16-17 Token: T_IGUAL
+"export_table_name all" linea 47 columnas:17-40 Token: T_CONST_STRING
+> linea 47 columnas:40-41 Token: T_MAYOR
+*** Error linea 47.*** El caracter: ' ,No pertenece a MiniC# 
+. linea 47 columnas:43-44 Token: T_PUNTO
+*** Error linea 47.*** El caracter: _ ,No pertenece a MiniC# 
+*** Error linea 47.*** El caracter: _ ,No pertenece a MiniC# 
+( linea 47 columnas:47-48 Token: T_PARENIZQ
+*** Error linea 47.*** El caracter: ' ,No pertenece a MiniC# 
+Select linea 47 columnas:49-55 Token: T_IDENTIFICADOR
+all linea 47 columnas:56-59 Token: T_IDENTIFICADOR
+*** Error linea 47.*** El caracter: ' ,No pertenece a MiniC# 
+) linea 47 columnas:60-61 Token: T_PARENDER
+. linea 47 columnas:62-63 Token: T_PUNTO
+*** Error linea 47.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 47 columnas:65-66 Token: T_MENOR
+/ linea 47 columnas:66-67 Token: T_DIVISION
+td linea 47 columnas:67-69 Token: T_IDENTIFICADOR
+> linea 47 columnas:69-70 Token: T_MAYOR
+*** Error linea 47.*** El caracter: ' ,No pertenece a MiniC# 
+. linea 48 columnas:4-5 Token: T_PUNTO
+*** Error linea 48.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 48 columnas:7-8 Token: T_MENOR
+td linea 48 columnas:8-10 Token: T_IDENTIFICADOR
+class linea 48 columnas:11-16 Token: T_CLASS
+= linea 48 columnas:16-17 Token: T_IGUAL
+"export_structure all" linea 48 columnas:17-39 Token: T_CONST_STRING
+> linea 48 columnas:39-40 Token: T_MAYOR
+*** Error linea 48.*** El caracter: ' ,No pertenece a MiniC# 
+. linea 49 columnas:4-5 Token: T_PUNTO
+*** Error linea 49.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 49 columnas:7-8 Token: T_MENOR
+input linea 49 columnas:8-13 Token: T_IDENTIFICADOR
+type linea 49 columnas:14-18 Token: T_IDENTIFICADOR
+= linea 49 columnas:18-19 Token: T_IGUAL
+"checkbox" linea 49 columnas:19-29 Token: T_CONST_STRING
+id linea 49 columnas:30-32 Token: T_IDENTIFICADOR
+= linea 49 columnas:32-33 Token: T_IGUAL
+"table_structure_all" linea 49 columnas:33-54 Token: T_CONST_STRING
+/ linea 49 columnas:55-56 Token: T_DIVISION
+> linea 49 columnas:56-57 Token: T_MAYOR
+< linea 49 columnas:57-58 Token: T_MENOR
+/ linea 49 columnas:58-59 Token: T_DIVISION
+td linea 49 columnas:59-61 Token: T_IDENTIFICADOR
+> linea 49 columnas:61-62 Token: T_MAYOR
+*** Error linea 49.*** El caracter: ' ,No pertenece a MiniC# 
+. linea 50 columnas:4-5 Token: T_PUNTO
+*** Error linea 50.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 50 columnas:7-8 Token: T_MENOR
+td linea 50 columnas:8-10 Token: T_IDENTIFICADOR
+class linea 50 columnas:11-16 Token: T_CLASS
+= linea 50 columnas:16-17 Token: T_IGUAL
+"export_data all" linea 50 columnas:17-34 Token: T_CONST_STRING
+> linea 50 columnas:34-35 Token: T_MAYOR
+< linea 50 columnas:35-36 Token: T_MENOR
+input linea 50 columnas:36-41 Token: T_IDENTIFICADOR
+type linea 50 columnas:42-46 Token: T_IDENTIFICADOR
+= linea 50 columnas:46-47 Token: T_IGUAL
+"checkbox" linea 50 columnas:47-57 Token: T_CONST_STRING
+id linea 50 columnas:58-60 Token: T_IDENTIFICADOR
+= linea 50 columnas:60-61 Token: T_IGUAL
+"table_data_all" linea 50 columnas:61-77 Token: T_CONST_STRING
+/ linea 50 columnas:78-79 Token: T_DIVISION
+> linea 50 columnas:79-80 Token: T_MAYOR
+*** Error linea 50.*** El caracter: ' ,No pertenece a MiniC# 
+. linea 51 columnas:4-5 Token: T_PUNTO
+*** Error linea 51.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 51 columnas:7-8 Token: T_MENOR
+/ linea 51 columnas:8-9 Token: T_DIVISION
+td linea 51 columnas:9-11 Token: T_IDENTIFICADOR
+> linea 51 columnas:11-12 Token: T_MAYOR
+*** Error linea 51.*** El caracter: ' ,No pertenece a MiniC# 
+. linea 52 columnas:4-5 Token: T_PUNTO
+*** Error linea 52.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 52 columnas:7-8 Token: T_MENOR
+/ linea 52 columnas:8-9 Token: T_DIVISION
+tr linea 52 columnas:9-11 Token: T_IDENTIFICADOR
+> linea 52 columnas:11-12 Token: T_MAYOR
+< linea 52 columnas:12-13 Token: T_MENOR
+/ linea 52 columnas:13-14 Token: T_DIVISION
+thead linea 52 columnas:14-19 Token: T_IDENTIFICADOR
+> linea 52 columnas:19-20 Token: T_MAYOR
+*** Error linea 52.*** El caracter: ' ,No pertenece a MiniC# 
+. linea 53 columnas:4-5 Token: T_PUNTO
+*** Error linea 53.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 53 columnas:7-8 Token: T_MENOR
+tbody linea 53 columnas:8-13 Token: T_IDENTIFICADOR
+> linea 53 columnas:13-14 Token: T_MAYOR
+*** Error linea 53.*** El caracter: ' ,No pertenece a MiniC# 
+; linea 53 columnas:15-16 Token: T_PUNTOYCOMA
+*** Error linea 54.*** El caracter: $ ,No pertenece a MiniC# 
+multi_values linea 54 columnas:1-13 Token: T_IDENTIFICADOR
+. linea 54 columnas:14-15 Token: T_PUNTO
+= linea 54 columnas:15-16 Token: T_IGUAL
+"\n" linea 54 columnas:17-21 Token: T_CONST_STRING
+; linea 54 columnas:21-22 Token: T_PUNTOYCOMA
+If linea 56 columnas:0-2 Token: T_IDENTIFICADOR
+( linea 56 columnas:3-4 Token: T_PARENIZQ
+! linea 56 columnas:4-5 Token: T_NEGACION
+empty linea 56 columnas:5-10 Token: T_IDENTIFICADOR
+( linea 56 columnas:10-11 Token: T_PARENIZQ
+*** Error linea 56.*** El caracter: $ ,No pertenece a MiniC# 
+*** Error linea 56.*** El caracter: _POST ,No pertenece a MiniC# 
+[ linea 56 columnas:17-18 Token: T_CORCHIZQ
+*** Error linea 56.*** El caracter: ' ,No pertenece a MiniC# 
+selected_tbl linea 56 columnas:19-31 Token: T_IDENTIFICADOR
+*** Error linea 56.*** El caracter: ' ,No pertenece a MiniC# 
+] linea 56 columnas:32-33 Token: T_CORCHDER
+) linea 56 columnas:33-34 Token: T_PARENDER
+&& linea 56 columnas:35-37 Token: T_AND
+empty linea 56 columnas:38-43 Token: T_IDENTIFICADOR
+( linea 56 columnas:43-44 Token: T_PARENIZQ
+*** Error linea 56.*** El caracter: $ ,No pertenece a MiniC# 
+table_select linea 56 columnas:45-57 Token: T_IDENTIFICADOR
+) linea 56 columnas:57-58 Token: T_PARENDER
+) linea 56 columnas:58-59 Token: T_PARENDER
+{ linea 56 columnas:60-61 Token: T_LLAVEIZQ
+*** Error linea 57.*** El caracter: $ ,No pertenece a MiniC# 
+table_select linea 57 columnas:5-17 Token: T_IDENTIFICADOR
+= linea 57 columnas:18-19 Token: T_IGUAL
+*** Error linea 57.*** El caracter: $ ,No pertenece a MiniC# 
+*** Error linea 57.*** El caracter: _POST ,No pertenece a MiniC# 
+[ linea 57 columnas:26-27 Token: T_CORCHIZQ
+*** Error linea 57.*** El caracter: ' ,No pertenece a MiniC# 
+selected_tbl linea 57 columnas:28-40 Token: T_IDENTIFICADOR
+*** Error linea 57.*** El caracter: ' ,No pertenece a MiniC# 
+] linea 57 columnas:41-42 Token: T_CORCHDER
+; linea 57 columnas:42-43 Token: T_PUNTOYCOMA
+} linea 58 columnas:0-1 Token: T_LLAVEDER
+foREach linea 61 columnas:0-7 Token: T_IDENTIFICADOR
+( linea 61 columnas:8-9 Token: T_PARENIZQ
+array linea 61 columnas:9-14 Token: T_IDENTIFICADOR
+( linea 61 columnas:14-15 Token: T_PARENIZQ
+*** Error linea 61.*** El caracter: ' ,No pertenece a MiniC# 
+table_select linea 61 columnas:16-28 Token: T_IDENTIFICADOR
+*** Error linea 61.*** El caracter: ' ,No pertenece a MiniC# 
+, linea 61 columnas:29-30 Token: T_COMA
+*** Error linea 61.*** El caracter: ' ,No pertenece a MiniC# 
+table_structure linea 61 columnas:32-47 Token: T_IDENTIFICADOR
+*** Error linea 61.*** El caracter: ' ,No pertenece a MiniC# 
+, linea 61 columnas:48-49 Token: T_COMA
+*** Error linea 61.*** El caracter: ' ,No pertenece a MiniC# 
+table_data linea 61 columnas:51-61 Token: T_IDENTIFICADOR
+*** Error linea 61.*** El caracter: ' ,No pertenece a MiniC# 
+) linea 61 columnas:62-63 Token: T_PARENDER
+as linea 61 columnas:64-66 Token: T_IDENTIFICADOR
+*** Error linea 61.*** El caracter: $ ,No pertenece a MiniC# 
+one_key linea 61 columnas:68-75 Token: T_IDENTIFICADOR
+) linea 61 columnas:75-76 Token: T_PARENDER
+{ linea 61 columnas:77-78 Token: T_LLAVEIZQ
+iF linea 62 columnas:4-6 Token: T_IDENTIFICADOR
+( linea 62 columnas:7-8 Token: T_PARENIZQ
+isset linea 62 columnas:8-13 Token: T_IDENTIFICADOR
+( linea 62 columnas:13-14 Token: T_PARENIZQ
+*** Error linea 62.*** El caracter: $ ,No pertenece a MiniC# 
+*** Error linea 62.*** El caracter: _GET ,No pertenece a MiniC# 
+[ linea 62 columnas:19-20 Token: T_CORCHIZQ
+*** Error linea 62.*** El caracter: $ ,No pertenece a MiniC# 
+one_key linea 62 columnas:21-28 Token: T_IDENTIFICADOR
+] linea 62 columnas:28-29 Token: T_CORCHDER
+) linea 62 columnas:29-30 Token: T_PARENDER
+) linea 62 columnas:30-31 Token: T_PARENDER
+{ linea 62 columnas:32-33 Token: T_LLAVEIZQ
+*** Error linea 63.*** El caracter: $ ,No pertenece a MiniC# 
+*** Error linea 63.*** El caracter: _GET ,No pertenece a MiniC# 
+[ linea 63 columnas:13-14 Token: T_CORCHIZQ
+*** Error linea 63.*** El caracter: $ ,No pertenece a MiniC# 
+one_key linea 63 columnas:15-22 Token: T_IDENTIFICADOR
+] linea 63 columnas:22-23 Token: T_CORCHDER
+= linea 63 columnas:24-25 Token: T_IGUAL
+urldecode linea 63 columnas:26-35 Token: T_IDENTIFICADOR
+( linea 63 columnas:35-36 Token: T_PARENIZQ
+*** Error linea 63.*** El caracter: $ ,No pertenece a MiniC# 
+*** Error linea 63.*** El caracter: _GET ,No pertenece a MiniC# 
+[ linea 63 columnas:41-42 Token: T_CORCHIZQ
+*** Error linea 63.*** El caracter: $ ,No pertenece a MiniC# 
+one_key linea 63 columnas:43-50 Token: T_IDENTIFICADOR
+] linea 63 columnas:50-51 Token: T_CORCHDER
+) linea 63 columnas:51-52 Token: T_PARENDER
+; linea 63 columnas:52-53 Token: T_PUNTOYCOMA
+*** Error linea 64.*** El caracter: $ ,No pertenece a MiniC# 
+*** Error linea 64.*** El caracter: _GET ,No pertenece a MiniC# 
+[ linea 64 columnas:13-14 Token: T_CORCHIZQ
+*** Error linea 64.*** El caracter: $ ,No pertenece a MiniC# 
+one_key linea 64 columnas:15-22 Token: T_IDENTIFICADOR
+] linea 64 columnas:22-23 Token: T_CORCHDER
+= linea 64 columnas:24-25 Token: T_IGUAL
+explode linea 64 columnas:26-33 Token: T_IDENTIFICADOR
+( linea 64 columnas:33-34 Token: T_PARENIZQ
+"," linea 64 columnas:34-37 Token: T_CONST_STRING
+, linea 64 columnas:37-38 Token: T_COMA
+*** Error linea 64.*** El caracter: $ ,No pertenece a MiniC# 
+*** Error linea 64.*** El caracter: _GET ,No pertenece a MiniC# 
+[ linea 64 columnas:44-45 Token: T_CORCHIZQ
+*** Error linea 64.*** El caracter: $ ,No pertenece a MiniC# 
+one_key linea 64 columnas:46-53 Token: T_IDENTIFICADOR
+] linea 64 columnas:53-54 Token: T_CORCHDER
+) linea 64 columnas:54-55 Token: T_PARENDER
+; linea 64 columnas:55-56 Token: T_PUNTOYCOMA
+} linea 65 columnas:4-5 Token: T_LLAVEDER
+} linea 66 columnas:0-1 Token: T_LLAVEDER
+FOreach linea 67 columnas:0-7 Token: T_IDENTIFICADOR
+( linea 67 columnas:8-9 Token: T_PARENIZQ
+*** Error linea 67.*** El caracter: $ ,No pertenece a MiniC# 
+tables linea 67 columnas:10-16 Token: T_IDENTIFICADOR
+as linea 67 columnas:17-19 Token: T_IDENTIFICADOR
+*** Error linea 67.*** El caracter: $ ,No pertenece a MiniC# 
+each_table linea 67 columnas:21-31 Token: T_IDENTIFICADOR
+) linea 67 columnas:31-32 Token: T_PARENDER
+{ linea 67 columnas:33-34 Token: T_LLAVEIZQ
+iF linea 68 columnas:4-6 Token: T_IDENTIFICADOR
+( linea 68 columnas:7-8 Token: T_PARENIZQ
+isset linea 68 columnas:8-13 Token: T_IDENTIFICADOR
+( linea 68 columnas:13-14 Token: T_PARENIZQ
+*** Error linea 68.*** El caracter: $ ,No pertenece a MiniC# 
+*** Error linea 68.*** El caracter: _GET ,No pertenece a MiniC# 
+[ linea 68 columnas:19-20 Token: T_CORCHIZQ
+*** Error linea 68.*** El caracter: ' ,No pertenece a MiniC# 
+table_select linea 68 columnas:21-33 Token: T_IDENTIFICADOR
+*** Error linea 68.*** El caracter: ' ,No pertenece a MiniC# 
+] linea 68 columnas:34-35 Token: T_CORCHDER
+) linea 68 columnas:35-36 Token: T_PARENDER
+&& linea 68 columnas:37-39 Token: T_AND
+is_array linea 68 columnas:40-48 Token: T_IDENTIFICADOR
+( linea 68 columnas:48-49 Token: T_PARENIZQ
+*** Error linea 68.*** El caracter: $ ,No pertenece a MiniC# 
+*** Error linea 68.*** El caracter: _GET ,No pertenece a MiniC# 
+[ linea 68 columnas:54-55 Token: T_CORCHIZQ
+*** Error linea 68.*** El caracter: ' ,No pertenece a MiniC# 
+table_select linea 68 columnas:56-68 Token: T_IDENTIFICADOR
+*** Error linea 68.*** El caracter: ' ,No pertenece a MiniC# 
+] linea 68 columnas:69-70 Token: T_CORCHDER
+) linea 68 columnas:70-71 Token: T_PARENDER
+) linea 68 columnas:71-72 Token: T_PARENDER
+{ linea 68 columnas:73-74 Token: T_LLAVEIZQ
+*** Error linea 69.*** El caracter: $ ,No pertenece a MiniC# 
+is_checked linea 69 columnas:9-19 Token: T_IDENTIFICADOR
+= linea 69 columnas:20-21 Token: T_IGUAL
+*** Error linea 69.*** El caracter: $ ,No pertenece a MiniC# 
+export linea 69 columnas:23-29 Token: T_IDENTIFICADOR
+- linea 69 columnas:29-30 Token: T_RESTA
+> linea 69 columnas:30-31 Token: T_MAYOR
+getCheckedClause linea 69 columnas:31-47 Token: T_IDENTIFICADOR
+( linea 69 columnas:47-48 Token: T_PARENIZQ
+*** Error linea 70.*** El caracter: $ ,No pertenece a MiniC# 
+each_table linea 70 columnas:13-23 Token: T_IDENTIFICADOR
+[ linea 70 columnas:23-24 Token: T_CORCHIZQ
+*** Error linea 70.*** El caracter: ' ,No pertenece a MiniC# 
+Name linea 70 columnas:25-29 Token: T_IDENTIFICADOR
+*** Error linea 70.*** El caracter: ' ,No pertenece a MiniC# 
+] linea 70 columnas:30-31 Token: T_CORCHDER
+, linea 70 columnas:31-32 Token: T_COMA
+*** Error linea 70.*** El caracter: $ ,No pertenece a MiniC# 
+*** Error linea 70.*** El caracter: _GET ,No pertenece a MiniC# 
+[ linea 70 columnas:38-39 Token: T_CORCHIZQ
+*** Error linea 70.*** El caracter: ' ,No pertenece a MiniC# 
+table_select linea 70 columnas:40-52 Token: T_IDENTIFICADOR
+*** Error linea 70.*** El caracter: ' ,No pertenece a MiniC# 
+] linea 70 columnas:53-54 Token: T_CORCHDER
+) linea 71 columnas:8-9 Token: T_PARENDER
+; linea 71 columnas:9-10 Token: T_PUNTOYCOMA
+} linea 72 columnas:4-5 Token: T_LLAVEDER
+elSEIf linea 72 columnas:6-12 Token: T_IDENTIFICADOR
+( linea 72 columnas:13-14 Token: T_PARENIZQ
+isset linea 72 columnas:14-19 Token: T_IDENTIFICADOR
+( linea 72 columnas:19-20 Token: T_PARENIZQ
+*** Error linea 72.*** El caracter: $ ,No pertenece a MiniC# 
+table_select linea 72 columnas:21-33 Token: T_IDENTIFICADOR
+) linea 72 columnas:33-34 Token: T_PARENDER
+) linea 72 columnas:34-35 Token: T_PARENDER
+{ linea 72 columnas:36-37 Token: T_LLAVEIZQ
+*** Error linea 73.*** El caracter: $ ,No pertenece a MiniC# 
+is_checked linea 73 columnas:9-19 Token: T_IDENTIFICADOR
+= linea 73 columnas:20-21 Token: T_IGUAL
+*** Error linea 73.*** El caracter: $ ,No pertenece a MiniC# 
+export linea 73 columnas:23-29 Token: T_IDENTIFICADOR
+- linea 73 columnas:29-30 Token: T_RESTA
+> linea 73 columnas:30-31 Token: T_MAYOR
+getCheckedClause linea 73 columnas:31-47 Token: T_IDENTIFICADOR
+( linea 73 columnas:47-48 Token: T_PARENIZQ
+*** Error linea 74.*** El caracter: $ ,No pertenece a MiniC# 
+each_table linea 74 columnas:13-23 Token: T_IDENTIFICADOR
+[ linea 74 columnas:23-24 Token: T_CORCHIZQ
+*** Error linea 74.*** El caracter: ' ,No pertenece a MiniC# 
+Name linea 74 columnas:25-29 Token: T_IDENTIFICADOR
+*** Error linea 74.*** El caracter: ' ,No pertenece a MiniC# 
+] linea 74 columnas:30-31 Token: T_CORCHDER
+, linea 74 columnas:31-32 Token: T_COMA
+*** Error linea 74.*** El caracter: $ ,No pertenece a MiniC# 
+table_select linea 74 columnas:34-46 Token: T_IDENTIFICADOR
+) linea 75 columnas:8-9 Token: T_PARENDER
+; linea 75 columnas:9-10 Token: T_PUNTOYCOMA
+} linea 76 columnas:4-5 Token: T_LLAVEDER
+eLSE linea 76 columnas:6-10 Token: T_IDENTIFICADOR
+{ linea 76 columnas:11-12 Token: T_LLAVEIZQ
+*** Error linea 77.*** El caracter: $ ,No pertenece a MiniC# 
+is_checked linea 77 columnas:9-19 Token: T_IDENTIFICADOR
+= linea 77 columnas:20-21 Token: T_IGUAL
+*** Error linea 77.*** El caracter: ' ,No pertenece a MiniC# 
+checked linea 77 columnas:24-31 Token: T_IDENTIFICADOR
+= linea 77 columnas:31-32 Token: T_IGUAL
+"checked" linea 77 columnas:32-41 Token: T_CONST_STRING
+*** Error linea 77.*** El caracter: ' ,No pertenece a MiniC# 
+; linea 77 columnas:42-43 Token: T_PUNTOYCOMA
+} linea 78 columnas:4-5 Token: T_LLAVEDER
+If linea 79 columnas:4-6 Token: T_IDENTIFICADOR
+( linea 79 columnas:7-8 Token: T_PARENIZQ
+isset linea 79 columnas:8-13 Token: T_IDENTIFICADOR
+( linea 79 columnas:13-14 Token: T_PARENIZQ
+*** Error linea 79.*** El caracter: $ ,No pertenece a MiniC# 
+*** Error linea 79.*** El caracter: _GET ,No pertenece a MiniC# 
+[ linea 79 columnas:19-20 Token: T_CORCHIZQ
+*** Error linea 79.*** El caracter: ' ,No pertenece a MiniC# 
+table_structure linea 79 columnas:21-36 Token: T_IDENTIFICADOR
+*** Error linea 79.*** El caracter: ' ,No pertenece a MiniC# 
+] linea 79 columnas:37-38 Token: T_CORCHDER
+) linea 79 columnas:38-39 Token: T_PARENDER
+&& linea 79 columnas:40-42 Token: T_AND
+is_array linea 79 columnas:43-51 Token: T_IDENTIFICADOR
+( linea 79 columnas:51-52 Token: T_PARENIZQ
+*** Error linea 79.*** El caracter: $ ,No pertenece a MiniC# 
+*** Error linea 79.*** El caracter: _GET ,No pertenece a MiniC# 
+[ linea 79 columnas:57-58 Token: T_CORCHIZQ
+*** Error linea 79.*** El caracter: ' ,No pertenece a MiniC# 
+table_structure linea 79 columnas:59-74 Token: T_IDENTIFICADOR
+*** Error linea 79.*** El caracter: ' ,No pertenece a MiniC# 
+] linea 79 columnas:75-76 Token: T_CORCHDER
+) linea 79 columnas:76-77 Token: T_PARENDER
+) linea 79 columnas:77-78 Token: T_PARENDER
+{ linea 79 columnas:79-80 Token: T_LLAVEIZQ
+*** Error linea 80.*** El caracter: $ ,No pertenece a MiniC# 
+structure_checked linea 80 columnas:9-26 Token: T_IDENTIFICADOR
+= linea 80 columnas:27-28 Token: T_IGUAL
+*** Error linea 80.*** El caracter: $ ,No pertenece a MiniC# 
+export linea 80 columnas:30-36 Token: T_IDENTIFICADOR
+- linea 80 columnas:36-37 Token: T_RESTA
+> linea 80 columnas:37-38 Token: T_MAYOR
+getCheckedClause linea 80 columnas:38-54 Token: T_IDENTIFICADOR
+( linea 80 columnas:54-55 Token: T_PARENIZQ
+*** Error linea 81.*** El caracter: $ ,No pertenece a MiniC# 
+each_table linea 81 columnas:13-23 Token: T_IDENTIFICADOR
+[ linea 81 columnas:23-24 Token: T_CORCHIZQ
+*** Error linea 81.*** El caracter: ' ,No pertenece a MiniC# 
+Name linea 81 columnas:25-29 Token: T_IDENTIFICADOR
+*** Error linea 81.*** El caracter: ' ,No pertenece a MiniC# 
+] linea 81 columnas:30-31 Token: T_CORCHDER
+, linea 81 columnas:31-32 Token: T_COMA
+*** Error linea 81.*** El caracter: $ ,No pertenece a MiniC# 
+*** Error linea 81.*** El caracter: _GET ,No pertenece a MiniC# 
+[ linea 81 columnas:38-39 Token: T_CORCHIZQ
+*** Error linea 81.*** El caracter: ' ,No pertenece a MiniC# 
+table_structure linea 81 columnas:40-55 Token: T_IDENTIFICADOR
+*** Error linea 81.*** El caracter: ' ,No pertenece a MiniC# 
+] linea 81 columnas:56-57 Token: T_CORCHDER
+) linea 82 columnas:8-9 Token: T_PARENDER
+; linea 82 columnas:9-10 Token: T_PUNTOYCOMA
+} linea 83 columnas:4-5 Token: T_LLAVEDER
+elsE linea 83 columnas:6-10 Token: T_IDENTIFICADOR
+{ linea 83 columnas:11-12 Token: T_LLAVEIZQ
+*** Error linea 84.*** El caracter: $ ,No pertenece a MiniC# 
+structure_checked linea 84 columnas:9-26 Token: T_IDENTIFICADOR
+= linea 84 columnas:27-28 Token: T_IGUAL
+*** Error linea 84.*** El caracter: $ ,No pertenece a MiniC# 
+is_checked linea 84 columnas:30-40 Token: T_IDENTIFICADOR
+; linea 84 columnas:40-41 Token: T_PUNTOYCOMA
+} linea 85 columnas:4-5 Token: T_LLAVEDER
+IF linea 86 columnas:4-6 Token: T_IDENTIFICADOR
+( linea 86 columnas:7-8 Token: T_PARENIZQ
+isset linea 86 columnas:8-13 Token: T_IDENTIFICADOR
+( linea 86 columnas:13-14 Token: T_PARENIZQ
+*** Error linea 86.*** El caracter: $ ,No pertenece a MiniC# 
+*** Error linea 86.*** El caracter: _GET ,No pertenece a MiniC# 
+[ linea 86 columnas:19-20 Token: T_CORCHIZQ
+*** Error linea 86.*** El caracter: ' ,No pertenece a MiniC# 
+table_data linea 86 columnas:21-31 Token: T_IDENTIFICADOR
+*** Error linea 86.*** El caracter: ' ,No pertenece a MiniC# 
+] linea 86 columnas:32-33 Token: T_CORCHDER
+) linea 86 columnas:33-34 Token: T_PARENDER
+&& linea 86 columnas:35-37 Token: T_AND
+is_array linea 86 columnas:38-46 Token: T_IDENTIFICADOR
+( linea 86 columnas:46-47 Token: T_PARENIZQ
+*** Error linea 86.*** El caracter: $ ,No pertenece a MiniC# 
+*** Error linea 86.*** El caracter: _GET ,No pertenece a MiniC# 
+[ linea 86 columnas:52-53 Token: T_CORCHIZQ
+*** Error linea 86.*** El caracter: ' ,No pertenece a MiniC# 
+table_data linea 86 columnas:54-64 Token: T_IDENTIFICADOR
+*** Error linea 86.*** El caracter: ' ,No pertenece a MiniC# 
+] linea 86 columnas:65-66 Token: T_CORCHDER
+) linea 86 columnas:66-67 Token: T_PARENDER
+) linea 86 columnas:67-68 Token: T_PARENDER
+{ linea 86 columnas:69-70 Token: T_LLAVEIZQ
+*** Error linea 87.*** El caracter: $ ,No pertenece a MiniC# 
+data_checked linea 87 columnas:9-21 Token: T_IDENTIFICADOR
+= linea 87 columnas:22-23 Token: T_IGUAL
+*** Error linea 87.*** El caracter: $ ,No pertenece a MiniC# 
+export linea 87 columnas:25-31 Token: T_IDENTIFICADOR
+- linea 87 columnas:31-32 Token: T_RESTA
+> linea 87 columnas:32-33 Token: T_MAYOR
+getCheckedClause linea 87 columnas:33-49 Token: T_IDENTIFICADOR
+( linea 87 columnas:49-50 Token: T_PARENIZQ
+*** Error linea 88.*** El caracter: $ ,No pertenece a MiniC# 
+each_table linea 88 columnas:13-23 Token: T_IDENTIFICADOR
+[ linea 88 columnas:23-24 Token: T_CORCHIZQ
+*** Error linea 88.*** El caracter: ' ,No pertenece a MiniC# 
+Name linea 88 columnas:25-29 Token: T_IDENTIFICADOR
+*** Error linea 88.*** El caracter: ' ,No pertenece a MiniC# 
+] linea 88 columnas:30-31 Token: T_CORCHDER
+, linea 88 columnas:31-32 Token: T_COMA
+*** Error linea 88.*** El caracter: $ ,No pertenece a MiniC# 
+*** Error linea 88.*** El caracter: _GET ,No pertenece a MiniC# 
+[ linea 88 columnas:38-39 Token: T_CORCHIZQ
+*** Error linea 88.*** El caracter: ' ,No pertenece a MiniC# 
+table_data linea 88 columnas:40-50 Token: T_IDENTIFICADOR
+*** Error linea 88.*** El caracter: ' ,No pertenece a MiniC# 
+] linea 88 columnas:51-52 Token: T_CORCHDER
+) linea 89 columnas:8-9 Token: T_PARENDER
+; linea 89 columnas:9-10 Token: T_PUNTOYCOMA
+} linea 90 columnas:4-5 Token: T_LLAVEDER
+Else linea 90 columnas:6-10 Token: T_IDENTIFICADOR
+{ linea 90 columnas:11-12 Token: T_LLAVEIZQ
+*** Error linea 91.*** El caracter: $ ,No pertenece a MiniC# 
+data_checked linea 91 columnas:9-21 Token: T_IDENTIFICADOR
+= linea 91 columnas:22-23 Token: T_IGUAL
+*** Error linea 91.*** El caracter: $ ,No pertenece a MiniC# 
+is_checked linea 91 columnas:25-35 Token: T_IDENTIFICADOR
+; linea 91 columnas:35-36 Token: T_PUNTOYCOMA
+} linea 92 columnas:4-5 Token: T_LLAVEDER
+*** Error linea 93.*** El caracter: $ ,No pertenece a MiniC# 
+table_html linea 93 columnas:5-15 Token: T_IDENTIFICADOR
+= linea 93 columnas:18-19 Token: T_IGUAL
+htmlspecialchars linea 93 columnas:20-36 Token: T_IDENTIFICADOR
+( linea 93 columnas:36-37 Token: T_PARENIZQ
+*** Error linea 93.*** El caracter: $ ,No pertenece a MiniC# 
+each_table linea 93 columnas:38-48 Token: T_IDENTIFICADOR
+[ linea 93 columnas:48-49 Token: T_CORCHIZQ
+*** Error linea 93.*** El caracter: ' ,No pertenece a MiniC# 
+Name linea 93 columnas:50-54 Token: T_IDENTIFICADOR
+*** Error linea 93.*** El caracter: ' ,No pertenece a MiniC# 
+] linea 93 columnas:55-56 Token: T_CORCHDER
+) linea 93 columnas:56-57 Token: T_PARENDER
+; linea 93 columnas:57-58 Token: T_PUNTOYCOMA
+*** Error linea 94.*** El caracter: $ ,No pertenece a MiniC# 
+multi_values linea 94 columnas:5-17 Token: T_IDENTIFICADOR
+. linea 94 columnas:18-19 Token: T_PUNTO
+= linea 94 columnas:19-20 Token: T_IGUAL
+*** Error linea 94.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 94 columnas:22-23 Token: T_MENOR
+tr linea 94 columnas:23-25 Token: T_IDENTIFICADOR
+class linea 94 columnas:26-31 Token: T_CLASS
+= linea 94 columnas:31-32 Token: T_IGUAL
+"marked" linea 94 columnas:32-40 Token: T_CONST_STRING
+> linea 94 columnas:40-41 Token: T_MAYOR
+*** Error linea 94.*** El caracter: ' ,No pertenece a MiniC# 
+; linea 94 columnas:42-43 Token: T_PUNTOYCOMA
+*** Error linea 95.*** El caracter: $ ,No pertenece a MiniC# 
+multi_values linea 95 columnas:5-17 Token: T_IDENTIFICADOR
+. linea 95 columnas:18-19 Token: T_PUNTO
+= linea 95 columnas:19-20 Token: T_IGUAL
+*** Error linea 95.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 95 columnas:22-23 Token: T_MENOR
+td linea 95 columnas:23-25 Token: T_IDENTIFICADOR
+> linea 95 columnas:25-26 Token: T_MAYOR
+< linea 95 columnas:26-27 Token: T_MENOR
+input linea 95 columnas:27-32 Token: T_IDENTIFICADOR
+type linea 95 columnas:33-37 Token: T_IDENTIFICADOR
+= linea 95 columnas:37-38 Token: T_IGUAL
+"checkbox" linea 95 columnas:38-48 Token: T_CONST_STRING
+name linea 95 columnas:49-53 Token: T_IDENTIFICADOR
+= linea 95 columnas:53-54 Token: T_IGUAL
+"table_select[]" linea 95 columnas:54-70 Token: T_CONST_STRING
+*** Error linea 95.*** El caracter: ' ,No pertenece a MiniC# 
+. linea 96 columnas:8-9 Token: T_PUNTO
+*** Error linea 96.*** El caracter: ' ,No pertenece a MiniC# 
+value linea 96 columnas:12-17 Token: T_IDENTIFICADOR
+= linea 96 columnas:17-18 Token: T_IGUAL
+"' . $table_html . '" linea 96 columnas:18-39 Token: T_CONST_STRING
+*** Error linea 96.*** El caracter: ' ,No pertenece a MiniC# 
+. linea 96 columnas:41-42 Token: T_PUNTO
+*** Error linea 96.*** El caracter: $ ,No pertenece a MiniC# 
+is_checked linea 96 columnas:44-54 Token: T_IDENTIFICADOR
+. linea 96 columnas:55-56 Token: T_PUNTO
+*** Error linea 96.*** El caracter: ' ,No pertenece a MiniC# 
+class linea 96 columnas:59-64 Token: T_CLASS
+= linea 96 columnas:64-65 Token: T_IGUAL
+"checkall" linea 96 columnas:65-75 Token: T_CONST_STRING
+/ linea 96 columnas:75-76 Token: T_DIVISION
+> linea 96 columnas:76-77 Token: T_MAYOR
+< linea 96 columnas:77-78 Token: T_MENOR
+/ linea 96 columnas:78-79 Token: T_DIVISION
+td linea 96 columnas:79-81 Token: T_IDENTIFICADOR
+> linea 96 columnas:81-82 Token: T_MAYOR
+*** Error linea 96.*** El caracter: ' ,No pertenece a MiniC# 
+; linea 96 columnas:83-84 Token: T_PUNTOYCOMA
+*** Error linea 97.*** El caracter: $ ,No pertenece a MiniC# 
+multi_values linea 97 columnas:5-17 Token: T_IDENTIFICADOR
+. linea 97 columnas:18-19 Token: T_PUNTO
+= linea 97 columnas:19-20 Token: T_IGUAL
+*** Error linea 97.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 97 columnas:22-23 Token: T_MENOR
+td linea 97 columnas:23-25 Token: T_IDENTIFICADOR
+class linea 97 columnas:26-31 Token: T_CLASS
+= linea 97 columnas:31-32 Token: T_IGUAL
+"export_table_name" linea 97 columnas:32-51 Token: T_CONST_STRING
+> linea 97 columnas:51-52 Token: T_MAYOR
+*** Error linea 97.*** El caracter: ' ,No pertenece a MiniC# 
+. linea 98 columnas:8-9 Token: T_PUNTO
+str_replace linea 98 columnas:10-21 Token: T_IDENTIFICADOR
+( linea 98 columnas:21-22 Token: T_PARENIZQ
+*** Error linea 98.*** El caracter: ' ,No pertenece a MiniC# 
+*** Error linea 98.*** El caracter: ' ,No pertenece a MiniC# 
+, linea 98 columnas:25-26 Token: T_COMA
+*** Error linea 98.*** El caracter: ' ,No pertenece a MiniC# 
+*** Error linea 98.*** El caracter: & ,No pertenece a MiniC# 
+nbsp linea 98 columnas:29-33 Token: T_IDENTIFICADOR
+; linea 98 columnas:33-34 Token: T_PUNTOYCOMA
+*** Error linea 98.*** El caracter: ' ,No pertenece a MiniC# 
+, linea 98 columnas:35-36 Token: T_COMA
+*** Error linea 98.*** El caracter: $ ,No pertenece a MiniC# 
+table_html linea 98 columnas:38-48 Token: T_IDENTIFICADOR
+) linea 98 columnas:48-49 Token: T_PARENDER
+. linea 98 columnas:50-51 Token: T_PUNTO
+*** Error linea 98.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 98 columnas:53-54 Token: T_MENOR
+/ linea 98 columnas:54-55 Token: T_DIVISION
+td linea 98 columnas:55-57 Token: T_IDENTIFICADOR
+> linea 98 columnas:57-58 Token: T_MAYOR
+*** Error linea 98.*** El caracter: ' ,No pertenece a MiniC# 
+; linea 98 columnas:59-60 Token: T_PUNTOYCOMA
+*** Error linea 99.*** El caracter: $ ,No pertenece a MiniC# 
+multi_values linea 99 columnas:5-17 Token: T_IDENTIFICADOR
+. linea 99 columnas:18-19 Token: T_PUNTO
+= linea 99 columnas:19-20 Token: T_IGUAL
+*** Error linea 99.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 99 columnas:22-23 Token: T_MENOR
+td linea 99 columnas:23-25 Token: T_IDENTIFICADOR
+class linea 99 columnas:26-31 Token: T_CLASS
+= linea 99 columnas:31-32 Token: T_IGUAL
+"export_structure" linea 99 columnas:32-50 Token: T_CONST_STRING
+> linea 99 columnas:50-51 Token: T_MAYOR
+*** Error linea 99.*** El caracter: ' ,No pertenece a MiniC# 
+. linea 100 columnas:8-9 Token: T_PUNTO
+*** Error linea 100.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 100 columnas:11-12 Token: T_MENOR
+input linea 100 columnas:12-17 Token: T_IDENTIFICADOR
+type linea 100 columnas:18-22 Token: T_IDENTIFICADOR
+= linea 100 columnas:22-23 Token: T_IGUAL
+"checkbox" linea 100 columnas:23-33 Token: T_CONST_STRING
+name linea 100 columnas:34-38 Token: T_IDENTIFICADOR
+= linea 100 columnas:38-39 Token: T_IGUAL
+"table_structure[]" linea 100 columnas:39-58 Token: T_CONST_STRING
+*** Error linea 100.*** El caracter: ' ,No pertenece a MiniC# 
+. linea 101 columnas:8-9 Token: T_PUNTO
+*** Error linea 101.*** El caracter: ' ,No pertenece a MiniC# 
+value linea 101 columnas:12-17 Token: T_IDENTIFICADOR
+= linea 101 columnas:17-18 Token: T_IGUAL
+"' . $table_html . '" linea 101 columnas:18-39 Token: T_CONST_STRING
+*** Error linea 101.*** El caracter: ' ,No pertenece a MiniC# 
+. linea 101 columnas:41-42 Token: T_PUNTO
+*** Error linea 101.*** El caracter: $ ,No pertenece a MiniC# 
+structure_checked linea 101 columnas:44-61 Token: T_IDENTIFICADOR
+. linea 101 columnas:62-63 Token: T_PUNTO
+*** Error linea 101.*** El caracter: ' ,No pertenece a MiniC# 
+/ linea 101 columnas:66-67 Token: T_DIVISION
+> linea 101 columnas:67-68 Token: T_MAYOR
+< linea 101 columnas:68-69 Token: T_MENOR
+/ linea 101 columnas:69-70 Token: T_DIVISION
+td linea 101 columnas:70-72 Token: T_IDENTIFICADOR
+> linea 101 columnas:72-73 Token: T_MAYOR
+*** Error linea 101.*** El caracter: ' ,No pertenece a MiniC# 
+; linea 101 columnas:74-75 Token: T_PUNTOYCOMA
+*** Error linea 102.*** El caracter: $ ,No pertenece a MiniC# 
+multi_values linea 102 columnas:5-17 Token: T_IDENTIFICADOR
+. linea 102 columnas:18-19 Token: T_PUNTO
+= linea 102 columnas:19-20 Token: T_IGUAL
+*** Error linea 102.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 102 columnas:22-23 Token: T_MENOR
+td linea 102 columnas:23-25 Token: T_IDENTIFICADOR
+class linea 102 columnas:26-31 Token: T_CLASS
+= linea 102 columnas:31-32 Token: T_IGUAL
+"export_data" linea 102 columnas:32-45 Token: T_CONST_STRING
+> linea 102 columnas:45-46 Token: T_MAYOR
+*** Error linea 102.*** El caracter: ' ,No pertenece a MiniC# 
+. linea 103 columnas:8-9 Token: T_PUNTO
+*** Error linea 103.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 103 columnas:11-12 Token: T_MENOR
+input linea 103 columnas:12-17 Token: T_IDENTIFICADOR
+type linea 103 columnas:18-22 Token: T_IDENTIFICADOR
+= linea 103 columnas:22-23 Token: T_IGUAL
+"checkbox" linea 103 columnas:23-33 Token: T_CONST_STRING
+name linea 103 columnas:34-38 Token: T_IDENTIFICADOR
+= linea 103 columnas:38-39 Token: T_IGUAL
+"table_data[]" linea 103 columnas:39-53 Token: T_CONST_STRING
+*** Error linea 103.*** El caracter: ' ,No pertenece a MiniC# 
+. linea 104 columnas:8-9 Token: T_PUNTO
+*** Error linea 104.*** El caracter: ' ,No pertenece a MiniC# 
+value linea 104 columnas:12-17 Token: T_IDENTIFICADOR
+= linea 104 columnas:17-18 Token: T_IGUAL
+"' . $table_html . '" linea 104 columnas:18-39 Token: T_CONST_STRING
+*** Error linea 104.*** El caracter: ' ,No pertenece a MiniC# 
+. linea 104 columnas:41-42 Token: T_PUNTO
+*** Error linea 104.*** El caracter: $ ,No pertenece a MiniC# 
+data_checked linea 104 columnas:44-56 Token: T_IDENTIFICADOR
+. linea 104 columnas:57-58 Token: T_PUNTO
+*** Error linea 104.*** El caracter: ' ,No pertenece a MiniC# 
+/ linea 104 columnas:61-62 Token: T_DIVISION
+> linea 104 columnas:62-63 Token: T_MAYOR
+< linea 104 columnas:63-64 Token: T_MENOR
+/ linea 104 columnas:64-65 Token: T_DIVISION
+td linea 104 columnas:65-67 Token: T_IDENTIFICADOR
+> linea 104 columnas:67-68 Token: T_MAYOR
+*** Error linea 104.*** El caracter: ' ,No pertenece a MiniC# 
+; linea 104 columnas:69-70 Token: T_PUNTOYCOMA
+*** Error linea 105.*** El caracter: $ ,No pertenece a MiniC# 
+multi_values linea 105 columnas:5-17 Token: T_IDENTIFICADOR
+. linea 105 columnas:18-19 Token: T_PUNTO
+= linea 105 columnas:19-20 Token: T_IGUAL
+*** Error linea 105.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 105 columnas:22-23 Token: T_MENOR
+/ linea 105 columnas:23-24 Token: T_DIVISION
+tr linea 105 columnas:24-26 Token: T_IDENTIFICADOR
+> linea 105 columnas:26-27 Token: T_MAYOR
+*** Error linea 105.*** El caracter: ' ,No pertenece a MiniC# 
+; linea 105 columnas:28-29 Token: T_PUNTOYCOMA
+} linea 106 columnas:0-1 Token: T_LLAVEDER
+*** Error linea 107.*** El caracter: $ ,No pertenece a MiniC# 
+multi_values linea 107 columnas:3-15 Token: T_IDENTIFICADOR
+. linea 107 columnas:16-17 Token: T_PUNTO
+= linea 107 columnas:17-18 Token: T_IGUAL
+"\n" linea 107 columnas:19-23 Token: T_CONST_STRING
+; linea 107 columnas:23-24 Token: T_PUNTOYCOMA
+*** Error linea 108.*** El caracter: $ ,No pertenece a MiniC# 
+multi_values linea 108 columnas:1-13 Token: T_IDENTIFICADOR
+. linea 108 columnas:14-15 Token: T_PUNTO
+= linea 108 columnas:15-16 Token: T_IGUAL
+*** Error linea 108.*** El caracter: ' ,No pertenece a MiniC# 
+< linea 108 columnas:18-19 Token: T_MENOR
+/ linea 108 columnas:19-20 Token: T_DIVISION
+tbody linea 108 columnas:20-25 Token: T_IDENTIFICADOR
+> linea 108 columnas:25-26 Token: T_MAYOR
+< linea 108 columnas:26-27 Token: T_MENOR
+/ linea 108 columnas:27-28 Token: T_DIVISION
+table linea 108 columnas:28-33 Token: T_IDENTIFICADOR
+> linea 108 columnas:33-34 Token: T_MAYOR
+< linea 108 columnas:34-35 Token: T_MENOR
+/ linea 108 columnas:35-36 Token: T_DIVISION
+div linea 108 columnas:36-39 Token: T_IDENTIFICADOR
+> linea 108 columnas:39-40 Token: T_MAYOR
+*** Error linea 108.*** El caracter: ' ,No pertenece a MiniC# 
+; linea 108 columnas:41-42 Token: T_PUNTOYCOMA
+iF linea 109 columnas:0-2 Token: T_IDENTIFICADOR
+( linea 109 columnas:3-4 Token: T_PARENIZQ
+! linea 109 columnas:4-5 Token: T_NEGACION
+isset linea 109 columnas:6-11 Token: T_IDENTIFICADOR
+( linea 109 columnas:11-12 Token: T_PARENIZQ
+*** Error linea 109.*** El caracter: $ ,No pertenece a MiniC# 
+sql_query linea 109 columnas:13-22 Token: T_IDENTIFICADOR
+) linea 109 columnas:22-23 Token: T_PARENDER
+) linea 109 columnas:23-24 Token: T_PARENDER
+{ linea 109 columnas:25-26 Token: T_LLAVEIZQ
+*** Error linea 110.*** El caracter: $ ,No pertenece a MiniC# 
+sql_query linea 110 columnas:5-14 Token: T_IDENTIFICADOR
+= linea 110 columnas:15-16 Token: T_IGUAL
+*** Error linea 110.*** El caracter: ' ,No pertenece a MiniC# 
+*** Error linea 110.*** El caracter: ' ,No pertenece a MiniC# 
+; linea 110 columnas:19-20 Token: T_PUNTOYCOMA
+} linea 111 columnas:0-1 Token: T_LLAVEDER
+iF linea 112 columnas:0-2 Token: T_IDENTIFICADOR
+( linea 112 columnas:3-4 Token: T_PARENIZQ
+! linea 112 columnas:4-5 Token: T_NEGACION
+isset linea 112 columnas:6-11 Token: T_IDENTIFICADOR
+( linea 112 columnas:11-12 Token: T_PARENIZQ
+*** Error linea 112.*** El caracter: $ ,No pertenece a MiniC# 
+num_tables linea 112 columnas:13-23 Token: T_IDENTIFICADOR
+) linea 112 columnas:23-24 Token: T_PARENDER
+) linea 112 columnas:24-25 Token: T_PARENDER
+{ linea 112 columnas:26-27 Token: T_LLAVEIZQ
+*** Error linea 113.*** El caracter: $ ,No pertenece a MiniC# 
+num_tables linea 113 columnas:5-15 Token: T_IDENTIFICADOR
+= linea 113 columnas:16-17 Token: T_IGUAL
+0 linea 113 columnas:18-19 Token: T_CONST_ENTERO
+; linea 113 columnas:19-20 Token: T_PUNTOYCOMA
+} linea 114 columnas:0-1 Token: T_LLAVEDER
+IF linea 115 columnas:0-2 Token: T_IDENTIFICADOR
+( linea 115 columnas:3-4 Token: T_PARENIZQ
+! linea 115 columnas:4-5 Token: T_NEGACION
+isset linea 115 columnas:6-11 Token: T_IDENTIFICADOR
+( linea 115 columnas:11-12 Token: T_PARENIZQ
+*** Error linea 115.*** El caracter: $ ,No pertenece a MiniC# 
+unlim_num_rows linea 115 columnas:13-27 Token: T_IDENTIFICADOR
+) linea 115 columnas:27-28 Token: T_PARENDER
+) linea 115 columnas:28-29 Token: T_PARENDER
+{ linea 115 columnas:30-31 Token: T_LLAVEIZQ
+*** Error linea 116.*** El caracter: $ ,No pertenece a MiniC# 
+unlim_num_rows linea 116 columnas:5-19 Token: T_IDENTIFICADOR
+= linea 116 columnas:20-21 Token: T_IGUAL
+0 linea 116 columnas:22-23 Token: T_CONST_ENTERO
+; linea 116 columnas:23-24 Token: T_PUNTOYCOMA
+} linea 117 columnas:0-1 Token: T_LLAVEDER
+If linea 118 columnas:0-2 Token: T_IDENTIFICADOR
+( linea 118 columnas:3-4 Token: T_PARENIZQ
+! linea 118 columnas:4-5 Token: T_NEGACION
+isset linea 118 columnas:6-11 Token: T_IDENTIFICADOR
+( linea 118 columnas:11-12 Token: T_PARENIZQ
+*** Error linea 118.*** El caracter: $ ,No pertenece a MiniC# 
+multi_values linea 118 columnas:13-25 Token: T_IDENTIFICADOR
+) linea 118 columnas:25-26 Token: T_PARENDER
+) linea 118 columnas:26-27 Token: T_PARENDER
+{ linea 118 columnas:28-29 Token: T_LLAVEIZQ
+*** Error linea 119.*** El caracter: $ ,No pertenece a MiniC# 
+multi_values linea 119 columnas:5-17 Token: T_IDENTIFICADOR
+= linea 119 columnas:18-19 Token: T_IGUAL
+*** Error linea 119.*** El caracter: ' ,No pertenece a MiniC# 
+*** Error linea 119.*** El caracter: ' ,No pertenece a MiniC# 
+; linea 119 columnas:22-23 Token: T_PUNTOYCOMA
+} linea 120 columnas:0-1 Token: T_LLAVEDER
+*** Error linea 121.*** El caracter: ? ,No pertenece a MiniC# 
+> linea 121 columnas:1-2 Token: T_MAYOR
