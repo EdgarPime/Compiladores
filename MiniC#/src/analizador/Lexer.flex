@@ -9,8 +9,8 @@ import static analizador.Token.*;
 CONSTBOOLEANAS=("true")|("false")
 CONSTENTERO=("+"|"-")?([0-9]+|0[xX][0-9a-fA-F]+|0[bB][01]+)
 CONSTDOUBLE=([+-])?(([0-9]+ | [0-9]+(".")[0-9]*) ([eE]([+-])?[0-9]+)?)
-CONSTSTRING= (("\"")(~["\""]))
-
+//CONSTSTRING= (("\"")(~["\""]))
+CONSTSTRING=(((\")[^\n]*(\")))
 
 
 //TOKEN PARA IDENTIFICADORES
@@ -69,7 +69,6 @@ CORCHETES=("[]")
 PARENTESIS=("()")
 LLAVES=("{}")
 
-PRUEBA=("\"")(~[\n])(~["\""])
 ENTER=[\n]
 WHITE=[ \t\r\n]
 
@@ -80,15 +79,18 @@ public String lexeme;
 //{WHITE} {/*Ignore*/}
 
 //TOKEN PARA ERRORES
-("="){D}({L}|{D})+ {lexeme=yytext(); return ERROR;}
-({D}|("_"))+({L}|{D}("_"))+ {lexeme=yytext(); return ERROR;}
-("/*") {lexeme=yytext(); return ERROR;}
-(("."){D}+)+([eE]([+-])?[0-9]+)? {lexeme=yytext(); return ERROR;}
-({D}+("."))(({D})|("."))+([eE]([+-])?[0-9]+)? {lexeme=yytext(); return ERROR;}
+//("="){D}({L}|{D})+ {lexeme=yytext(); return ERROR;}
+//({D}|("_"))+({L}|{D}("_"))+ {lexeme=yytext(); return ERROR;}
+("/*").* {lexeme=yytext(); return ERROR;}
+//(("."){D}+)+([eE]([+-])?[0-9]+)? {lexeme=yytext(); return ERROR;}
+//({D}+("."))(({D})|("."))+([eE]([+-])?[0-9]+)? {lexeme=yytext(); return ERROR;}
+
+
 
 
 //TOKEN PARA COMENTARIOS
 ("/*")(~["*"])("/") {lexeme=yytext(); return COMENTARIO1;}
+//("/*")[^("*/")]*("*/") {lexeme=yytext(); return COMENTARIO1;}
 
 ("//").*(\n) {lexeme=yytext(); return COMENTARIO2;} 
 

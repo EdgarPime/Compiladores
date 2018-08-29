@@ -38,7 +38,7 @@ public class interfaz extends javax.swing.JFrame {
      public String ubicacion,out;
         
     /** Creates new form interfaz */
-    List<identificador> tokenslist;
+    
     public interfaz() {
         initComponents();
     }
@@ -246,15 +246,16 @@ public class interfaz extends javax.swing.JFrame {
                     case T_CONST_BOOLEANO:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        writer1.print(lexer.lexeme + "   linea "+cont+ "columnas sd" +" Token:" +token );
-                      
+                        fila=lexer.lexeme.length()+cont1;
+                        writer1.print(lexer.lexeme +"\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token+" (valor = "+lexer.lexeme+")" + "\n");
+                        cont1=fila; 
                         break;
                         
                     case T_CONST_ENTERO:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme +"\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token+" (valor = "+lexer.lexeme+")" + "\n");
                         cont1=fila;  
                         break;
                     
@@ -262,7 +263,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme +"\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token+" (valor = "+lexer.lexeme+")" + "\n");
                         cont1=fila;  
                         break;    
                         
@@ -270,7 +271,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme +"\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token+" (valor = "+lexer.lexeme+")" + "\n");
                         cont1=fila;  
                         break;     
                         
@@ -278,7 +279,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
                         cont1=fila;  
                         break;
                         
@@ -286,7 +287,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
                         cont1=fila;  
                         break;  
                         
@@ -294,7 +295,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
                         cont1=fila;  
                         break; 
                         
@@ -302,7 +303,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
                         cont1=fila;  
                         break; 
                         
@@ -310,7 +311,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
                         cont1=fila;  
                         break; 
                         
@@ -318,7 +319,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
                         cont1=fila;  
                         break; 
                         
@@ -326,7 +327,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
                         cont1=fila;  
                         break; 
                         
@@ -334,7 +335,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
                         cont1=fila;  
                         break; 
                         
@@ -342,7 +343,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
                         cont1=fila;  
                         break; 
                         
@@ -358,7 +359,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme +"\t" +"\t"+"\t" + "linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
                         cont1=fila;  
                         break;
                         
@@ -366,7 +367,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
                         cont1=fila;  
                         break;
                         
@@ -374,7 +375,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
                         cont1=fila; 
                         break;
                         
@@ -382,7 +383,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
                         cont1=fila;  
                         break;
                         
@@ -390,7 +391,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
                         cont1=fila;  
                         break;
                         
@@ -398,7 +399,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
                         cont1=fila;  
                         break;
                         
@@ -406,7 +407,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
                         cont1=fila;  
                         break;
                         
@@ -414,7 +415,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
                         cont1=fila;  
                         break;
                         
@@ -422,7 +423,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
                         cont1=fila; 
                         break;
                     
@@ -430,7 +431,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
                         cont1=fila;  
                         break;
                         
@@ -438,7 +439,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
                         cont1=fila;  
                         break;
                         
@@ -446,7 +447,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
                         cont1=fila;  
                         break;
                         
@@ -454,7 +455,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
                         cont1=fila;  
                         break;
                         
@@ -462,7 +463,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
                         cont1=fila;  
                         break;
                         
@@ -470,7 +471,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
                         cont1=fila;  
                         break;
                         
@@ -478,7 +479,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
                         cont1=fila;  
                         break;
                         
@@ -486,7 +487,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
                         cont1=fila;  
                         break;
                         
@@ -494,7 +495,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
                         cont1=fila;  
                         break;
                         
@@ -502,7 +503,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
                         cont1=fila;  
                         break;
                         
@@ -510,7 +511,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
                         cont1=fila;  
                         break;
                         
@@ -518,7 +519,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
                         cont1=fila;  
                         break;
                         
@@ -526,7 +527,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
                         cont1=fila;  
                         break;
                         
@@ -534,7 +535,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
                         cont1=fila;  
                         break;
                         
@@ -542,7 +543,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
                         cont1=fila;  
                         break;
                         
@@ -550,15 +551,17 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
                         cont1=fila;  
                         break;
+                        
+
                         
                     case T_COMA:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
                         cont1=fila;  
                         break;
                         
@@ -566,7 +569,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
                         cont1=fila;  
                         break;
                         
@@ -574,7 +577,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
                         cont1=fila;  
                         break;
                         
@@ -582,7 +585,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
                         cont1=fila;  
                         break;
                         
@@ -590,7 +593,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " + lexer.lexeme + "\n");
                         cont1=fila;  
                         break;
                         
@@ -598,7 +601,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
                         cont1=fila;  
                         break;
                         
@@ -606,7 +609,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
                         cont1=fila;  
                         break;
                         
@@ -614,7 +617,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
                         cont1=fila;  
                         break;
                         
@@ -622,7 +625,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
                         cont1=fila;  
                         break;
                         
@@ -630,7 +633,7 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
                         cont1=fila;  
                         break;
                         
@@ -638,16 +641,31 @@ public class interfaz extends javax.swing.JFrame {
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
                         fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
                         cont1=fila;  
                         break;
                         
                     case T_IDENTIFICADOR:
-                        resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
-                        jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
-                        cont1=fila;                        
+                        if(lexer.lexeme.length()<31)
+                        {
+                            resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
+                            jTextArea1.setText(resultado);
+                            fila=lexer.lexeme.length()+cont1;
+                            writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                            cont1=fila; 
+                        }
+
+                        else
+                        {
+                            String truncar;
+                            truncar=lexer.lexeme.substring(0, 31);
+                            resultado=resultado+"TOKEN: " + token + " " + truncar + "\n";
+                            jTextArea1.setText(resultado);
+                            fila=truncar.length()+cont1;
+                            writer1.print(truncar + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token +" Error truncando el identificador" +"\n");
+                            cont1=fila;
+                        }
+                        
                         break;
                         
                     case ENTER:
@@ -698,8 +716,11 @@ public class interfaz extends javax.swing.JFrame {
               
                                      
                     default:
-                        resultado=resultado+ "TOKEN: " + token   + "\n";
-                        //writer1.print(token.toString().toLowerCase());
+                        resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
+                        jTextArea1.setText(resultado);
+                        fila=lexer.lexeme.length()+cont1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        cont1=fila;  
                 }
                 
             }
