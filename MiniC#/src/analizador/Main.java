@@ -11,13 +11,19 @@ import java.io.File;
  *
  * @author Carlos
  */
+
+
 public class Main {
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        String path = "C:/Users/Pimentel/Desktop/MiniC#/src/analizador/Lexer.flex";
+    //public static void main(String[] args) {
+    public static void main(String ubicacion) {
+        
+        
+        //String path = "C:/Users/Pimentel/Desktop/MiniC#/src/analizador/Lexer.flex";
+        String path =ubicacion;
         generarLexer(path);
 
     }

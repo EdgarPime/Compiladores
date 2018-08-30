@@ -20,6 +20,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Reader;
+import static java.lang.Thread.sleep;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Level;
@@ -34,9 +35,9 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  */
 public class interfaz extends javax.swing.JFrame {
     
-     public File Archivo;
-     public String ubicacion,out;
-        
+     public File Archivo,Archivo2;
+     public String ubicacion, ubicacion2,out;
+     Main Principal=new Main();   
     /** Creates new form interfaz */
     
     public interfaz() {
@@ -60,6 +61,9 @@ public class interfaz extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jLabel3 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jTextField2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -92,6 +96,17 @@ public class interfaz extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane2.setViewportView(jTextArea1);
 
+        jLabel3.setText("Lexer");
+
+        jButton4.setText("Agregar Ruta");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jTextField2.setText("C:\\Users\\Pimentel\\Desktop\\MiniC#\\src\\analizador\\Lexer.flex");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -107,34 +122,45 @@ public class interfaz extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 158, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1)))
+                                .addComponent(jTextField1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(12, 12, 12)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)
-                            .addComponent(jButton3)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(116, 116, 116)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
+                    .addComponent(jButton3))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jButton4)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
@@ -145,12 +171,29 @@ public class interfaz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try{
-             probarArchivoLexer();
+        if ("".equals(jTextField1.getText())) 
+        {
+           JOptionPane.showMessageDialog(null, "No ha seleccionado un archivo");
         }
-        catch (IOException ex){
-            System.out.println(ex.getMessage());
+        else
+        {
+            
+            Principal.main(jTextField2.getText());
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(interfaz.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try {
+                probarArchivoLexer();
+            } catch (IOException ex) {
+                Logger.getLogger(interfaz.class.getName()).log(Level.SEVERE, null, ex);
+            }
+             
+
+            
         }
+        
         
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -174,6 +217,18 @@ public class interfaz extends javax.swing.JFrame {
         ubicacion = Archivo.getAbsolutePath();
         jTextField1.setText(ubicacion);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        String Direccion = System.getProperty("user.home");
+        JFileChooser Seleccionar = new JFileChooser(Direccion + "/Desktop");
+        Seleccionar.addChoosableFileFilter(new FileNameExtensionFilter("Archivo de Texto (.flex)", "flex"));       
+        Seleccionar.setAcceptAllFileFilterUsed(false);
+        Seleccionar.showDialog(this,"Seleccionar");
+        Archivo2 = Seleccionar.getSelectedFile();
+        ubicacion2 = Archivo2.getAbsolutePath();
+        jTextField2.setText(ubicacion2);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
     * @param args the command line arguments
@@ -233,7 +288,7 @@ public class interfaz extends javax.swing.JFrame {
                         
                 //se imprime el archivo
                 //indica que el archivo es correcto
-                JOptionPane.showMessageDialog(null, "¡El archivo es correto, pertenece a MiniC#!");
+                JOptionPane.showMessageDialog(null, "¡El archivo se analizo correctamente, pertenece a MiniC#!");
 
                 writer1.close();
 
@@ -662,7 +717,7 @@ public class interfaz extends javax.swing.JFrame {
                             truncar=lexer.lexeme.substring(0, 31);
                             resultado=resultado+"TOKEN: " + token + " " + truncar + "\n";
                             jTextArea1.setText(resultado);
-                            fila=truncar.length()+cont1-1;
+                            fila=lexer.lexeme.length()+cont1-1;
                             writer1.print(truncar + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token +" Error truncando el identificador" +"\n");
                             cont1=fila+1;
                         }
@@ -746,11 +801,14 @@ public class interfaz extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 
 }
