@@ -165,8 +165,9 @@ public class interfaz extends javax.swing.JFrame {
         // TODO add your handling code here:
          String Direccion = System.getProperty("user.home");
         JFileChooser Seleccionar = new JFileChooser(Direccion + "/Desktop");
-        Seleccionar.addChoosableFileFilter(new FileNameExtensionFilter("Archivo de Texto (.php)", "php"));
-        Seleccionar.addChoosableFileFilter(new FileNameExtensionFilter("Archivo de Texto (.txt)", "txt"));        
+        //Seleccionar.addChoosableFileFilter(new FileNameExtensionFilter("Archivo de Texto (.php)", "php"));
+        Seleccionar.addChoosableFileFilter(new FileNameExtensionFilter("Archivo de Texto (.txt)", "txt"));     
+        Seleccionar.addChoosableFileFilter(new FileNameExtensionFilter("Archivo de Texto (.frag)", "frag"));   
         Seleccionar.setAcceptAllFileFilterUsed(false);
         Seleccionar.showDialog(this,"Seleccionar");
         Archivo = Seleccionar.getSelectedFile();
@@ -208,7 +209,7 @@ public class interfaz extends javax.swing.JFrame {
     
     public void probarArchivoLexer() throws IOException{
         
-        int cont=1,cont1=0,fila=0;
+        int cont=1,cont1=1,fila=0;
         char[] text;
         LecturaArchivo();
         if(jTextField1!=null){
@@ -219,7 +220,7 @@ public class interfaz extends javax.swing.JFrame {
             String errores="";
             
             PrintWriter writer1;
-            out=ubicacion.substring(0, ubicacion.length()-3);
+            out=ubicacion.substring(0, ubicacion.length()-4);
             File salida = new File (out+"out");
             writer1 = new PrintWriter(salida);
             
@@ -246,313 +247,313 @@ public class interfaz extends javax.swing.JFrame {
                     case T_CONST_BOOLEANO:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
+                        fila=lexer.lexeme.length()+cont1-1;
                         writer1.print(lexer.lexeme +"\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token+" (valor = "+lexer.lexeme+")" + "\n");
-                        cont1=fila; 
+                        cont1=fila+1; 
                         break;
                         
                     case T_CONST_ENTERO:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
+                        fila=lexer.lexeme.length()+cont1-1;
                         writer1.print(lexer.lexeme +"\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token+" (valor = "+lexer.lexeme+")" + "\n");
-                        cont1=fila;  
+                        cont1=fila+1;  
                         break;
                     
                     case T_CONST_DOUBLE:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
+                        fila=lexer.lexeme.length()+cont1-1;
                         writer1.print(lexer.lexeme +"\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token+" (valor = "+lexer.lexeme+")" + "\n");
-                        cont1=fila;  
+                        cont1=fila+1;  
                         break;    
                         
                     case T_CONST_STRING:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
+                        fila=lexer.lexeme.length()+cont1-1;
                         writer1.print(lexer.lexeme +"\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token+" (valor = "+lexer.lexeme+")" + "\n");
-                        cont1=fila;  
+                        cont1=fila+1;  
                         break;     
                         
                     case T_VOID:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
+                        fila=lexer.lexeme.length()+cont1-1;
                         writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
-                        cont1=fila;  
+                        cont1=fila+1;  
                         break;
                         
                     case T_INT:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
+                        fila=lexer.lexeme.length()+cont1-1;
                         writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
-                        cont1=fila;  
+                        cont1=fila+1;  
                         break;  
                         
                     case T_DOUBLE:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
+                        fila=lexer.lexeme.length()+cont1-1;
                         writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
-                        cont1=fila;  
+                        cont1=fila+1;  
                         break; 
                         
                     case T_BOOL:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
+                        fila=lexer.lexeme.length()+cont1-1;
                         writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
-                        cont1=fila;  
+                        cont1=fila+1;  
                         break; 
                         
                     case T_STRING:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
+                        fila=lexer.lexeme.length()+cont1-1;
                         writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
-                        cont1=fila;  
+                        cont1=fila+1;  
                         break; 
                         
                     case T_CLASS:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
+                        fila=lexer.lexeme.length()+cont1-1;
                         writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
-                        cont1=fila;  
+                        cont1=fila+1;  
                         break; 
                         
                     case T_INTERFACE:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
+                        fila=lexer.lexeme.length()+cont1-1;
                         writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
-                        cont1=fila;  
+                        cont1=fila+1;  
                         break; 
                         
                     case T_NULL:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
+                        fila=lexer.lexeme.length()+cont1-1;
                         writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
-                        cont1=fila;  
+                        cont1=fila+1;  
                         break; 
                         
                     case T_THIS:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
+                        fila=lexer.lexeme.length()+cont1-1;
                         writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
-                        cont1=fila;  
+                        cont1=fila+1;  
                         break; 
                         
                     case T_EXTENDS:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
+                        fila=lexer.lexeme.length()+cont1-1;
                         writer1.print(lexer.lexeme + "   linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
-                        cont1=fila;  
+                        cont1=fila+1;  
                         break;
                         
                     case T_IMPLEMENTS:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
+                        fila=lexer.lexeme.length()+cont1-1;
                         writer1.print(lexer.lexeme +"\t" +"\t"+"\t" + "linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
-                        cont1=fila;  
+                        cont1=fila+1;  
                         break;
                         
                     case T_FOR:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
+                        fila=lexer.lexeme.length()+cont1-1;
                         writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
-                        cont1=fila;  
+                        cont1=fila+1;  
                         break;
                         
                     case T_WHILE:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
+                        fila=lexer.lexeme.length()+cont1-1;
                         writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
-                        cont1=fila; 
+                        cont1=fila+1; 
                         break;
                         
                     case T_IF:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
+                        fila=lexer.lexeme.length()+cont1-1;
                         writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
-                        cont1=fila;  
+                        cont1=fila+1;  
                         break;
                         
                     case T_ELSE:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
+                        fila=lexer.lexeme.length()+cont1-1;
                         writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
-                        cont1=fila;  
+                        cont1=fila+1;  
                         break;
                         
                     case T_RETURN:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
+                        fila=lexer.lexeme.length()+cont1-1;
                         writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
-                        cont1=fila;  
+                        cont1=fila+1;  
                         break;
                         
                     case T_BREAK:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
+                        fila=lexer.lexeme.length()+cont1-1;
                         writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
-                        cont1=fila;  
+                        cont1=fila+1;  
                         break;
                         
                     case T_NEW:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
+                        fila=lexer.lexeme.length()+cont1-1;
                         writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
-                        cont1=fila;  
+                        cont1=fila+1;  
                         break;
                         
                     case T_NEWARRAY:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
+                        fila=lexer.lexeme.length()+cont1-1;
                         writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
-                        cont1=fila; 
+                        cont1=fila+1; 
                         break;
                     
                     case T_SUMA:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: "+ "'" +lexer.lexeme+ "'" + "\n");
+                        cont1=fila+1;  
                         break;
                         
                     case T_RESTA:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: "+ "'" +lexer.lexeme + "'"+ "\n");
+                        cont1=fila+1;  
                         break;
                         
                     case T_MULTIPLICACION:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " + "'"+lexer.lexeme + "'"+ "\n");
+                        cont1=fila+1;  
                         break;
                         
                     case T_DIVISION:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " + "'"+lexer.lexeme + "'"+ "\n");
+                        cont1=fila+1;  
                         break;
                         
                     case T_PROCENTAJE:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: "+ "'" +lexer.lexeme+ "'" + "\n");
+                        cont1=fila+1;  
                         break;
                         
                     case T_MENOR:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " + "'"+lexer.lexeme+ "'" + "\n");
+                        cont1=fila+1;  
                         break;
                         
                     case T_MENORIGUAL:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " + "'"+lexer.lexeme + "'"+ "\n");
+                        cont1=fila+1;  
                         break;
                         
                     case T_MAYOR:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " + "'"+lexer.lexeme + "'"+ "\n");
+                        cont1=fila+1;  
                         break;
                         
                     case T_MAYORIGUAL:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " + "'"+lexer.lexeme + "'"+ "\n");
+                        cont1=fila+1;  
                         break;
                         
                     case T_IGUAL:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " + "'"+lexer.lexeme + "'"+ "\n");
+                        cont1=fila+1;  
                         break;
                         
                     case T_IGUALDAD:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " + "'"+lexer.lexeme+ "'" + "\n");
+                        cont1=fila+1;  
                         break;
                         
                     case T_DIFERENTE:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " + "'"+lexer.lexeme + "'"+ "\n");
+                        cont1=fila+1;  
                         break;
                         
                     case T_AND:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " + "'"+lexer.lexeme+ "'" + "\n");
+                        cont1=fila+1;  
                         break;
                         
                     case T_OR:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: "+ "'" +lexer.lexeme + "'"+ "\n");
+                        cont1=fila+1;  
                         break;
                         
                     case T_NEGACION:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: "+ "'" +lexer.lexeme + "'"+ "\n");
+                        cont1=fila+1;  
                         break;
                         
                     case T_PUNTOYCOMA:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: "+ "'" +lexer.lexeme+ "'" + "\n");
+                        cont1=fila+1;  
                         break;
                         
 
@@ -560,89 +561,89 @@ public class interfaz extends javax.swing.JFrame {
                     case T_COMA:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " + "'"+lexer.lexeme + "'"+ "\n");
+                        cont1=fila+1;  
                         break;
                         
                     case T_PUNTO:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " + "'"+lexer.lexeme + "'"+ "\n");
+                        cont1=fila+1;  
                         break;
                         
                     case T_CORCHIZQ:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " + "'"+lexer.lexeme + "'"+ "\n");
+                        cont1=fila+1;  
                         break;
                         
                     case T_CORCHDER:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " + "'"+lexer.lexeme + "'"+ "\n");
+                        cont1=fila+1;  
                         break;
                         
                     case T_PARENIZQ:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " + lexer.lexeme + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " + "'"+ lexer.lexeme + "'"+ "\n");
+                        cont1=fila+1;  
                         break;
                         
                     case T_PARENDER:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " + "'"+lexer.lexeme + "'"+ "\n");
+                        cont1=fila+1;  
                         break;
                         
                     case T_LLAVEIZQ:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " + "'"+lexer.lexeme + "'"+ "\n");
+                        cont1=fila+1;  
                         break;
                         
                     case T_LLAVEDER:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " + "'"+lexer.lexeme + "'"+ "\n");
+                        cont1=fila+1;  
                         break;
                         
                     case T_CORCHETES:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: "+ "'" +lexer.lexeme + "'"+ "\n");
+                        cont1=fila+1;  
                         break;
                         
                     case T_PARENTESIS:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " + "'"+lexer.lexeme + "'"+ "\n");
+                        cont1=fila+1;  
                         break;
                         
                     case T_LLAVES:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +lexer.lexeme + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " + "'"+lexer.lexeme + "'"+ "\n");
+                        cont1=fila+1;  
                         break;
                         
                     case T_IDENTIFICADOR:
@@ -650,9 +651,9 @@ public class interfaz extends javax.swing.JFrame {
                         {
                             resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                             jTextArea1.setText(resultado);
-                            fila=lexer.lexeme.length()+cont1;
+                            fila=lexer.lexeme.length()+cont1-1;
                             writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
-                            cont1=fila; 
+                            cont1=fila+1; 
                         }
 
                         else
@@ -661,9 +662,9 @@ public class interfaz extends javax.swing.JFrame {
                             truncar=lexer.lexeme.substring(0, 31);
                             resultado=resultado+"TOKEN: " + token + " " + truncar + "\n";
                             jTextArea1.setText(resultado);
-                            fila=truncar.length()+cont1;
+                            fila=truncar.length()+cont1-1;
                             writer1.print(truncar + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token +" Error truncando el identificador" +"\n");
-                            cont1=fila;
+                            cont1=fila+1;
                         }
                         
                         break;
@@ -671,7 +672,7 @@ public class interfaz extends javax.swing.JFrame {
                     case ENTER:
                         
                         cont++;
-                        cont1=0;
+                        cont1=1;
                         
                         break;
                         
@@ -706,9 +707,18 @@ public class interfaz extends javax.swing.JFrame {
                     case ERROR:
                         resultado=resultado+ "Error, el token no pertenece a MiniC# " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        cont1=fila;  
-                        writer1.print("*** Error linea " + cont+ ".*** El caracter: "+lexer.lexeme+ " ,No pertenece a MiniC# " + "\n");
+                        fila=lexer.lexeme.length()+cont1-1;
+                        cont1=fila+1;  
+                        writer1.print("*** Error linea " + cont+ ".*** El caracter: "+ "'"+lexer.lexeme+ "'"+ " ,No pertenece a MiniC# " + "\n");
+                        
+                        break;
+                        
+                    case ERROR1:
+                        resultado=resultado+ "Error, el token no pertenece a MiniC# " + lexer.lexeme + "\n";
+                        jTextArea1.setText(resultado);
+                        //fila=lexer.lexeme.length()+cont1-1;
+                        //cont1=fila+1;  
+                        writer1.print("*** Error linea " + cont+ ".*** Token: '/*', Invalido nunca cerro el comentario" + "\n");
                         
                         break;
                         
@@ -718,9 +728,9 @@ public class interfaz extends javax.swing.JFrame {
                     default:
                         resultado=resultado+"TOKEN: " + token + " " + lexer.lexeme + "\n";
                         jTextArea1.setText(resultado);
-                        fila=lexer.lexeme.length()+cont1;
-                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
-                        cont1=fila;  
+                        fila=lexer.lexeme.length()+cont1-1;
+                        writer1.print(lexer.lexeme + "\t" +"\t"+"\t" +"linea "+cont+1+ " columnas:"+cont1+"-"+fila  +" Token: " +token + "\n");
+                        cont1=fila+1;  
                 }
                 
             }

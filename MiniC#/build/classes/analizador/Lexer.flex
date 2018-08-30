@@ -79,18 +79,17 @@ public String lexeme;
 //{WHITE} {/*Ignore*/}
 
 //TOKEN PARA ERRORES
-//("="){D}({L}|{D})+ {lexeme=yytext(); return ERROR;}
+
 //({D}|("_"))+({L}|{D}("_"))+ {lexeme=yytext(); return ERROR;}
-("/*").* {lexeme=yytext(); return ERROR;}
 //(("."){D}+)+([eE]([+-])?[0-9]+)? {lexeme=yytext(); return ERROR;}
 //({D}+("."))(({D})|("."))+([eE]([+-])?[0-9]+)? {lexeme=yytext(); return ERROR;}
-
+("/*")([^*]|("*")[^/])* {lexeme=yytext(); return ERROR1;}
 
 
 
 //TOKEN PARA COMENTARIOS
-("/*")(~["*"])("/") {lexeme=yytext(); return COMENTARIO1;}
-//("/*")[^("*/")]*("*/") {lexeme=yytext(); return COMENTARIO1;}
+//("/*")(~["*"])("/") {lexeme=yytext(); return COMENTARIO1;}
+("/*")([^*]|("*")[^/])*("*/") {lexeme=yytext(); return COMENTARIO1;}
 
 ("//").*(\n) {lexeme=yytext(); return COMENTARIO2;} 
 
