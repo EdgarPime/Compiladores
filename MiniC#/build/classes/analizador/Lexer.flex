@@ -7,8 +7,8 @@ import static analizador.Token.*;
 
 //TOKEN PARA CONSTANTES
 CONSTBOOLEANAS=("true")|("false")
-CONSTENTERO=("+"|"-")?([0-9]+|0[xX][0-9a-fA-F]+|0[bB][01]+)
-CONSTDOUBLE=([+-])?(([0-9]+ | [0-9]+(".")[0-9]*) ([eE]([+-])?[0-9]+)?)
+CONSTENTERO=([0-9]+|0[xX][0-9a-fA-F]+|0[bB][01]+)
+CONSTDOUBLE=(([0-9]+(".")[0-9]*) ([eE]([+-])?[0-9]+)?)
 //CONSTSTRING= (("\"")(~["\""]))
 CONSTSTRING=(((\")[^\n]*(\")))
 
@@ -78,12 +78,12 @@ public String lexeme;
 %%
 //{WHITE} {/*Ignore*/}
 
-
 //TOKEN PARA COMENTARIOS
 
 //("/*")([^*]|("*")[^/])*("*/") {lexeme=yytext(); return COMENTARIO1;}
 "/*"~"*/" {lexeme=yytext(); return COMENTARIO1;}
 ("//").*(\n) {lexeme=yytext(); return COMENTARIO2;} 
+
 
 //TOKEN PARA ERRORES
 
@@ -93,6 +93,8 @@ public String lexeme;
 //("/*")([^*]|("*")[^/])* {lexeme=yytext(); return ERROR1;}
 
 "/*"[^"*/"]* {lexeme=yytext(); return ERROR1;}
+
+
 
 
 //TOKEN PARA CONSTANTES
