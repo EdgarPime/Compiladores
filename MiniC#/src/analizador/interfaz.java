@@ -22,6 +22,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Reader;
 import static java.lang.Thread.sleep;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Level;
@@ -29,6 +31,9 @@ import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import java.util.Scanner;
+import java.io.File;
+
 
 /**
  *
@@ -36,8 +41,15 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  */
 public class interfaz extends javax.swing.JFrame {
     
-     public File Archivo,Archivo2;
-     public String ubicacion, ubicacion2,out;
+    public File Archivo,Archivo2;
+    public String ubicacion, ubicacion2,out;
+    
+    public final static int GENERAR = 1;
+    public final static int EJECUTAR = 2;
+    public final static int SALIR = 3;
+    
+    static String ruta;
+   
      //Main Principal=new Main();   
     /** Creates new form interfaz */
     
@@ -66,6 +78,7 @@ public class interfaz extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -116,6 +129,14 @@ public class interfaz extends javax.swing.JFrame {
             }
         });
 
+        jButton6.setText("Generar Sintactico");
+        jButton6.setToolTipText("");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -123,9 +144,7 @@ public class interfaz extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -139,7 +158,7 @@ public class interfaz extends javax.swing.JFrame {
                                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 12, Short.MAX_VALUE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
@@ -152,8 +171,10 @@ public class interfaz extends javax.swing.JFrame {
                     .addComponent(jButton1))
                 .addGap(63, 63, 63))
             .addGroup(layout.createSequentialGroup()
-                .addGap(197, 197, 197)
+                .addGap(62, 62, 62)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -181,7 +202,9 @@ public class interfaz extends javax.swing.JFrame {
                         .addGap(58, 58, 58)
                         .addComponent(jButton2)))
                 .addGap(31, 31, 31)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
 
@@ -212,7 +235,7 @@ public class interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        jTextField1.setText("");
+        jTextField1.setText("ubicacion");
         
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -246,10 +269,50 @@ public class interfaz extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         //Principal.main(jTextField2.getText());
+        
         String path =jTextField2.getText();
         generarLexer(path);
+        
+        
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        
+        //ruta=ubicacion;
+        //String[] RutaArchivo={ruta};
+        
+        //AnalizadorSintactico.main(RutaArchivo);
+        
+        String[] archivoPrueba = {ubicacion};
+        AnalizadorSintactico.main(archivoPrueba);
+        System.out.println("Ejecutado!");
+        
+        
+    }//GEN-LAST:event_jButton6ActionPerformed
+    public static boolean moverArch(String archNombre) {
+        boolean efectuado = false;
+        File arch = new File(archNombre);
+        if (arch.exists()) {
+            System.out.println("\n*** Moviendo " + arch + " \n***");
+            Path currentRelativePath = Paths.get("");
+            String nuevoDir = currentRelativePath.toAbsolutePath().toString()
+                    + File.separator + "src" + File.separator
+                    + "analizador" + File.separator + arch.getName();
+            File archViejo = new File(nuevoDir);
+            archViejo.delete();
+            if (arch.renameTo(new File(nuevoDir))) {
+                System.out.println("\n*** Generado " + archNombre + "***\n");
+                efectuado = true;
+            } else {
+                System.out.println("\n*** No movido " + archNombre + " ***\n");
+            }
+
+        } else {
+            System.out.println("\n*** Codigo no existente ***\n");
+        }
+        return efectuado;
+    }
     /**
     * @param args the command line arguments
     */
@@ -259,6 +322,8 @@ public class interfaz extends javax.swing.JFrame {
                 new interfaz().setVisible(true);
             }
         });
+        
+        
     }
     public void LecturaArchivo() throws FileNotFoundException, IOException{
     
@@ -832,6 +897,7 @@ public class interfaz extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
