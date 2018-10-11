@@ -173,116 +173,116 @@ Entero = 0 | [1-9][0-9]*
 	("//"[^\n]*)   { /* ignora el espacio */ } 	
 					  
 	//TOKEN DE PALABRAS RESERVADAS
-	{VOID} {   System.out.print(yytext()); 
+	{VOID} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.VOID,  (yytext())); }
-	{INT} {   System.out.print(yytext()); 
+	{INT} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.INT,  (yytext())); }
-	{DOUBLE} {   System.out.print(yytext()); 
+	{DOUBLE} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.DOUBLE,  (yytext())); }
-	{BOOL} {   System.out.print(yytext()); 
+	{BOOL} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.BOOL,  (yytext())); }
-	{STRING} {   System.out.print(yytext()); 
+	{STRING} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.STRING,  (yytext())); }
-	{CLASS} {   System.out.print(yytext()); 
+	{CLASS} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.CLASS,  (yytext())); }
-	{INTERFACE} {   System.out.print(yytext()); 
+	{INTERFACE} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.INTERFACE,  (yytext())); }
-	{NULL} {   System.out.print(yytext()); 
+	{NULL} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.NULL,  (yytext())); }
-	{THIS} {   System.out.print(yytext()); 
+	{THIS} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.THIS,  (yytext())); }
-	{EXTENDS} {   System.out.print(yytext()); 
+	{EXTENDS} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.EXTENDS,  (yytext())); }
-	{IMPLEMENTS} {   System.out.print(yytext()); 
+	{IMPLEMENTS} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.IMPLEMENTS,(yytext())); }
-	{FOR} {   System.out.print(yytext()); 
+	{FOR} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.FOR, (yytext())); }
-	{WHILE} {   System.out.print(yytext()); 
+	{WHILE} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.WHILE, (yytext())); }
-	{IF} {   System.out.print(yytext()); 
+	{IF} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.IF, (yytext())); }
-	{ELSE} {   System.out.print(yytext()); 
+	{ELSE} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.ELSE, (yytext())); }
-	{RETURN} {   System.out.print(yytext()); 
+	{RETURN} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.RETURN, (yytext())); }
-	{BREAK} {   System.out.print(yytext()); 
+	{BREAK} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.BREAK, (yytext())); }
-	{NEW} {   System.out.print(yytext()); 
+	{NEW} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.NEW, (yytext())); }
-	{NEWARRAY} {   System.out.print(yytext()); 
+	{NEWARRAY} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.NEWARRAY, (yytext())); }
-	{PRINT} {   System.out.print(yytext()); 
+	{PRINT} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.PRINT, (yytext())); }
-	{READINTEGER} {   System.out.print(yytext()); 
+	{READINTEGER} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.READINTEGER, (yytext())); }
-	{MALLOC} {   System.out.print(yytext()); 
+	{MALLOC} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.MALLOC, (yytext())); }
-	{READLINE} {   System.out.print(yytext()); 
+	{READLINE} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.READLINE, (yytext())); }
-	{GETBYTE} {   System.out.print(yytext()); 
+	{GETBYTE} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.GETBYTE, (yytext())); }
-	{SETBYTE} {   System.out.print(yytext()); 
+	{SETBYTE} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.SETBYTE, (yytext())); }
 					  
 					  
 					  
   //TOKEN PARA OPERADORES Y CARACTERES DE PUNTUACION
-	{SUMA} {   System.out.print(yytext()); 
+	{SUMA} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.SUMA, (yytext())); }
-	{RESTA} {   System.out.print(yytext()); 
+	{RESTA} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.RESTA, (yytext())); }
-	{MULTIPLICACION} {   System.out.print(yytext()); 
+	{MULTIPLICACION} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.MULTIPLICACION, (yytext())); }
-	{DIVISION} {   System.out.print(yytext()); 
+	{DIVISION} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.DIVISION, (yytext())); }
-	{PORCENTAJE} {   System.out.print(yytext()); 
+	{PORCENTAJE} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.PORCENTAJE, (yytext())); }
-	{MENOR} {   System.out.print(yytext()); 
+	{MENOR} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.MENOR, (yytext())); }
-	{MENORIGUAL} {   System.out.print(yytext()); 
+	{MENORIGUAL} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.MENORIGUAL,(yytext())); }
-	{MAYOR} {   System.out.print(yytext()); 
+	{MAYOR} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.MAYOR, (yytext())); }
-	{MAYORIGUAL} {   System.out.print(yytext()); 
+	{MAYORIGUAL} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.MAYORIGUAL, (yytext())); }
-	{IGUAL} {   System.out.print(yytext()); 
+	{IGUAL} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.IGUAL, (yytext())); }
-	{IGUALDAD} {   System.out.print(yytext()); 
+	{IGUALDAD} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.IGUALDAD, (yytext())); }
-	{DIFERENTE} {   System.out.print(yytext()); 
+	{DIFERENTE} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.DIFERENTE, (yytext())); }
-	{AND} {   System.out.print(yytext()); 
+	{AND} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.AND, (yytext())); }
-	{OR} {   System.out.print(yytext()); 
+	{OR} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.OR, (yytext())); }
-	{NEGACION} {   System.out.print(yytext()); 
+	{NEGACION} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.NEGACION, (yytext())); }
-	{PUNTOYCOMA} {   System.out.print(yytext()); 
+	{PUNTOYCOMA} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.PUNTOYCOMA, (yytext())); }
-	{COMA} {   System.out.print(yytext()); 
+	{COMA} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.COMA, (yytext())); }
-	{PUNTO} {   System.out.print(yytext()); 
+	{PUNTO} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.PUNTO, (yytext())); }
-	{CORCHIZQ} {   System.out.print(yytext()); 
+	{CORCHIZQ} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.CORCHIZQ, (yytext())); }
-	{CORCHDER} {   System.out.print(yytext()); 
+	{CORCHDER} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.CORCHDER, (yytext())); }
-	{PARENIZQ} {   System.out.print(yytext()); 
+	{PARENIZQ} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.PARENIZQ, (yytext())); }
-	{PARENDER} {   System.out.print(yytext()); 
+	{PARENDER} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.PARENDER, (yytext())); }
-	{LLAVEIZQ} {   System.out.print(yytext()); 
+	{LLAVEIZQ} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.LLAVEIZQ, (yytext())); }
-	{LLAVEDER} {   System.out.print(yytext()); 
+	{LLAVEDER} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.LLAVEDER, (yytext())); }
-	{CORCHETES} {   System.out.print(yytext()); 
+	{CORCHETES} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.CORCHETES, (yytext())); }
-	{PARENTESIS} {   System.out.print(yytext()); 
+	{PARENTESIS} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.PARENTESIS, (yytext())); }
-	{LLAVES} {   System.out.print(yytext()); 
+	{LLAVES} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.LLAVES, (yytext())); }
 	
-	{L}({L}|{D}|"_")* {   System.out.print(yytext()); 
+	{L}({L}|{D}|"_")* {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.IDENTIFICADOR, (yytext())); }
 	
     /* Regresa que el token SEMI declarado en la clase sym fue encontrado. */

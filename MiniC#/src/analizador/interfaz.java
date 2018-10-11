@@ -129,7 +129,7 @@ public class interfaz extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setText("Generar Sintactico");
+        jButton6.setText("Analizar Sintactico");
         jButton6.setToolTipText("");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

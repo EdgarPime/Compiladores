@@ -42,12 +42,17 @@ int hola ( )
 		
 		if(hola ||hola3)
 		{
-			while(hola!=3)
+			while(hola!=3.545)
 			{
 				for ( i=0; i<5; i+1) this;
 				return;
 				break;
 			}
+		}
+		else
+		{
+			int hola;
+			prueba=" dfdfdf";
 		}
 		
 	}
@@ -88,6 +93,7 @@ class prueba extends public implements gd22
 	}
 	
 	bool ola;
+	int [] hola;
 
 }
 
@@ -100,7 +106,7 @@ interface gg
 }
 
 class prueba extends public implements gd22{
-
+// dfdfd
 	string hola ()
 	{
 		for ( i=0; i<5; i+1)

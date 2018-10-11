@@ -45,14 +45,3 @@ return			linea 12 columnas:5-10 Token: T_RETURN
 a			linea 12 columnas:12-12 Token: T_IDENTIFICADOR
 ;			linea 12 columnas:13-13 Token: ';'
 }			linea 13 columnas:1-1 Token: '}'
-/			linea 13 columnas:3-3 Token: '/'
-/			linea 13 columnas:4-4 Token: '/'
-No			linea 13 columnas:6-7 Token: T_IDENTIFICADOR
-syntax			linea 13 columnas:9-14 Token: T_IDENTIFICADOR
-errors			linea 13 columnas:16-21 Token: T_IDENTIFICADOR
-should			linea 13 columnas:23-28 Token: T_IDENTIFICADOR
-be			linea 13 columnas:30-31 Token: T_IDENTIFICADOR
-found			linea 13 columnas:33-37 Token: T_IDENTIFICADOR
-!			linea 13 columnas:38-38 Token: '!'
-!			linea 13 columnas:39-39 Token: '!'
-!			linea 13 columnas:40-40 Token: '!'
