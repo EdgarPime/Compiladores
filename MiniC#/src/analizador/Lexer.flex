@@ -82,7 +82,7 @@ public String lexeme;
 
 //("/*")([^*]|("*")[^/])*("*/") {lexeme=yytext(); return COMENTARIO1;}
 "/*"~"*/" {lexeme=yytext(); return COMENTARIO1;}
-("//").*(\n) {lexeme=yytext(); return COMENTARIO2;} 
+("//"[^\n]*) {lexeme=yytext(); return COMENTARIO2;} 
 
 
 //TOKEN PARA ERRORES
