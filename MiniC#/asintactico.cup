@@ -254,7 +254,7 @@ non terminal Object		Program, Decl, Program2, VariableDecl, FunctionDecl, ClassD
 			| Expr MULTIPLICACION Expr 
 			| Expr DIVISION Expr 
 			| Expr PORCENTAJE Expr 
-			//| RESTA Expr 
+			| RESTA Expr 
 			| Expr MENOR Expr 
 			| Expr MENORIGUAL Expr 
 			| Expr MAYOR Expr 

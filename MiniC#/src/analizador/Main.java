@@ -27,15 +27,15 @@ public class Main {
     //public static void main(String ubicacion) {
         
         
-        String path = "C:/Users/Pimentel/Desktop/Compiladores-EdgarPimen-Fase2/MiniC#/src/analizador/Lexer.flex";
+        String path = "C:/Users/Pimentel/Documents/GitHub/Compiladores/MiniC#/src/analizador/Lexer.flex";
         //String path =ubicacion;
         generarLexer(path);
         
-        String path1 = "C:/Users/Pimentel/Desktop/Compiladores-EdgarPimen-Fase2/MiniC#/alexico.flex";
+        String path1 = "C:/Users/Pimentel/Documents/GitHub/Compiladores/MiniC#/alexico.flex";
         //String path =ubicacion;
         generarLexer(path1);
  
-        String archSintactico = "C:/Users/Pimentel/Desktop/Compiladores-EdgarPimen-Fase2/MiniC#/asintactico.cup";
+        String archSintactico = "C:/Users/Pimentel/Documents/GitHub/Compiladores/MiniC#/asintactico.cup";
         System.out.println("\n*** Procesando archivo default ***\n");
         String[] asintactico = {"-parser", "AnalizadorSintactico", archSintactico};
       
