@@ -5,6 +5,11 @@
  */
 package analizador;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.List;
+
 /**
  *
  * @author Pimentel
@@ -85,6 +90,20 @@ public class Operaciones {
         String Posfijo = Stage1.getPostFix();    
         Resolver Stage2 = new Resolver(Posfijo);
         return Stage2.getResult();
+    }
+    
+    public static void GenerarTabla(List<TablaSimbolos> ListaSimbolos) throws FileNotFoundException
+    {
+        PrintWriter writer;
+        File salida = new File ("TablaSimbolos.out");
+        writer = new PrintWriter(salida);
+        writer.print("Nombre del Ambito"+"      |       "+"Tipo del Datos"+"       |       "+"Valor del Ambito"+"      |     "+"Tipo del Ambito"+"      |       "+"Numero de clase"+"     |       "+"Si es parametro"+"\n");
+        for (int i = 0; i < ListaSimbolos.size(); i++) 
+        {
+            writer.print(ListaSimbolos.get(i).nombre+"              |               "+ListaSimbolos.get(i).tipo+"               |               "+ListaSimbolos.get(i).valor+"              |           "+ListaSimbolos.get(i).bandera+"            |               "+ListaSimbolos.get(i).clases+"             |               "+ListaSimbolos.get(i).bparametro+"\n");
+        }
+
+         writer.close();
     }
 
     

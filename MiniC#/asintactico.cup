@@ -122,6 +122,10 @@ non terminal Object		Program, Decl, Program2, VariableDecl, FunctionDecl, ClassD
 /* ------------------- Seccion de la gramatica ------------------------ */
    
 	Program ::= Decl Program2
+					{:
+						Operaciones.GenerarTabla(ListaSimbolos);
+
+					:}
 				;
 				
 	Program2 ::= Decl Program2
@@ -631,6 +635,9 @@ non terminal Object		Program, Decl, Program2, VariableDecl, FunctionDecl, ClassD
 				;
 				
 	ReturnStmt ::=	RETURN Expr2 PUNTOYCOMA
+				{:
+					 
+				:}
 				;
 				
 	BreakStmt ::= BREAK PUNTOYCOMA
