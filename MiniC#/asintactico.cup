@@ -6,6 +6,10 @@ package analizador;
 /* Import the class java_cup.runtime.*  */
 import java_cup.runtime.*;
 import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
+
+
    
 /* Codigo del parser, se copia integramente a la clase final.
     Agregamos el manejo de errores. */
@@ -47,8 +51,19 @@ parser code {:
             ex.printStackTrace();
         }
     }
-:};
-   
+	
+	List<TablaSimbolos> ListaSimbolos= new ArrayList<TablaSimbolos>();
+	List<TablaSimbolos> ListaTemporal= new ArrayList<TablaSimbolos>();
+	int cont=0;
+	int cont1=1;
+	boolean Clasemas = false;
+	boolean ManejarClase = false;
+	boolean verInstancia=false;
+	boolean ExisteInstancia=false;
+	boolean VerAmbito=false;
+	boolean Correcto=false;
+	
+:};   
 
    
 /* ------------Declaracion de simbolos terminales y no terminales---------- */
@@ -113,9 +128,41 @@ non terminal Object		Program, Decl, Program2, VariableDecl, FunctionDecl, ClassD
 				| /*vacio*/
 				;
 				
-	Decl 	::= VariableDecl 
+	Decl 	::= VariableDecl
+				{:
+					for(int z=0; z < ListaTemporal.size(); z++)
+					{
+						TablaSimbolos Tabla = new TablaSimbolos(ListaTemporal.get(z).nombre, ListaTemporal.get(z).tipo, ListaTemporal.get(z).valor, ListaTemporal.get(z).bandera, 0, 0);
+						if(Tabla.VerificarVariable(ListaTemporal.get(z).nombre, ListaSimbolos, 0).equals(true))
+						{
+							System.out.println(" El ID ya existe"); 
+						}
+						else
+						{
+							ListaSimbolos.add(ListaTemporal.get(z));
+							
+						}
+						
+					} 
+					ListaTemporal.clear();
+				:}
 				| FunctionDecl 
+				{:
+					ListaSimbolos.get(ListaSimbolos.size()-1).clases=0;
+					for(int i=0; i < ListaTemporal.size(); i++)
+					{
+						ListaTemporal.get(i).bandera = 2;
+						ListaTemporal.get(i).clases=0;
+						ListaSimbolos.add(ListaTemporal.get(i));
+					}
+					ListaTemporal.clear(); 
+				:}
 				| ClassDecl 
+				{:
+					Clasemas = false;
+					ManejarClase = false;
+
+				:}
 				| InterfaceDecl
 				| error PUNTOYCOMA
 				| error PARENIZQ
@@ -124,33 +171,344 @@ non terminal Object		Program, Decl, Program2, VariableDecl, FunctionDecl, ClassD
 	VariableDecl ::= Variable PUNTOYCOMA
 					;
 					
-	Variable ::= Type IDENTIFICADOR
+	Variable ::= Type:t IDENTIFICADOR:i
+				{:
+					if(verInstancia==true)
+					{
+						if(ExisteInstancia==true)
+						{
+							TablaSimbolos Tabla =new TablaSimbolos(i.toString(),t.toString(),"",1,cont, 0);
+							if(Tabla.VerificarVariable(i.toString(), ListaTemporal, cont).equals(true))
+							{
+								System.out.println(" El" + i.toString() + "ya existe"); 
+							}
+							else
+							{
+								ListaTemporal.add(Tabla);
+								
+							}
+							
+							RESULT = t;
+							System.out.println(" Variable=   " + t +" "+ i); 
+						}
+					}
+					else
+					{
+						TablaSimbolos Tabla =new TablaSimbolos(i.toString(),t.toString(),"",1,cont, 0);
+						if(Tabla.VerificarVariable(i.toString(), ListaTemporal, cont).equals(true))
+						{
+							System.out.println(" El" + i.toString() + "ya existe"); 
+						}
+						else
+						{
+							ListaTemporal.add(Tabla);
+							
+						}
+						
+						RESULT = t;
+						System.out.println(" Variable=   " + t +" "+ i); 
+					}
+					verInstancia=false;
+						
+				:}
 				;
 				
-	Type ::= INT 
-			| DOUBLE 
-			| BOOL 
-			| STRING 
-			| IDENTIFICADOR 
-			| Type CORCHETES	
+	Type ::= INT:e
+				{:
+                    RESULT = e;
+					 
+				:}
+			| DOUBLE:e
+				{:
+                    RESULT = e;
+					
+				:}
+			| BOOL:e
+				{:
+                    RESULT = e;
+				:}
+			| STRING:e
+				{:
+                    RESULT = e;
+				:}
+			| IDENTIFICADOR:e
+				{:
+					
+                    RESULT = e;
+					
+					
+					TablaSimbolos Tabla =new TablaSimbolos(e.toString(),"class","",4,cont, 0);
+					if(Tabla.VerificarClase(e.toString(), ListaSimbolos).equals(true))
+					{
+						ExisteInstancia=true;
+						verInstancia=true;
+					}
+					else
+					{
+						System.out.println("ERROR no existe la declaracion de la clase" );
+						ExisteInstancia=false;
+						verInstancia=true;
+					}
+					
+				:}
+			| Type:e CORCHETES:f
+				{:
+                    RESULT = new String(e.toString()+f.toString());
+				:}			
 			;
 			
-	FunctionDecl ::= Type IDENTIFICADOR PARENIZQ Formals PARENDER StmtBlock 
-					| VOID IDENTIFICADOR PARENIZQ Formals PARENDER StmtBlock 
-					| Type IDENTIFICADOR PARENTESIS  StmtBlock 
-					| VOID IDENTIFICADOR PARENTESIS StmtBlock 
+	FunctionDecl ::= Type:t IDENTIFICADOR:i PARENIZQ Formals:f PARENDER StmtBlock 
+				{:
+					
+					if (ManejarClase == true)
+					{
+						TablaSimbolos Tabla1 = new TablaSimbolos(i.toString(), t.toString(), "", 3, cont, 0);
+						for(int z=0; z < ListaSimbolos.size(); z++)
+						{
+							if(ListaSimbolos.get(z).nombre == Tabla1.nombre && ListaSimbolos.get(z).clases == Tabla1.clases && ListaSimbolos.get(z).bandera == Tabla1.bandera)
+							{
+								
+										System.out.println("ERROR ya hay una funcion que se llama igual" );
+							}
+							else
+							{
+								ListaSimbolos.add(Tabla1);
+								break;
+							}
+						} 
+					}
+					else
+					{
+						TablaSimbolos Tabla1 = new TablaSimbolos(i.toString(), t.toString(), "", 3, cont+1, 0);
+						for(int z=0; z < ListaSimbolos.size(); z++)
+						{
+							if(ListaSimbolos.get(z).nombre == Tabla1.nombre && (ListaSimbolos.get(z).clases)+1 == Tabla1.clases && ListaSimbolos.get(z).bandera == Tabla1.bandera)
+							{
+								
+										System.out.println("ERROR ya hay una funcion que se llama igual" );
+							}
+							else
+							{
+								ListaSimbolos.add(Tabla1);
+								break;
+							}
+						} 
+					}
+					
+						
+						
+					
+				:}
+					| VOID:t IDENTIFICADOR:i PARENIZQ Formals:f PARENDER StmtBlock 
+					{:
+						if (ManejarClase == true)
+					{
+						TablaSimbolos Tabla1 = new TablaSimbolos(i.toString(), t.toString(), "", 3, cont, 0);
+						for(int z=0; z < ListaSimbolos.size(); z++)
+						{
+							if(ListaSimbolos.get(z).nombre == Tabla1.nombre && ListaSimbolos.get(z).clases == Tabla1.clases && ListaSimbolos.get(z).bandera == Tabla1.bandera)
+							{
+								
+										System.out.println("ERROR ya hay una funcion que se llama igual" );
+							}
+							else
+							{
+								ListaSimbolos.add(Tabla1);
+								break;
+							}
+						} 
+					}
+					else
+					{
+						TablaSimbolos Tabla1 = new TablaSimbolos(i.toString(), t.toString(), "", 3, cont+1, 0);
+						for(int z=0; z < ListaSimbolos.size(); z++)
+						{
+							if(ListaSimbolos.get(z).nombre == Tabla1.nombre && (ListaSimbolos.get(z).clases)+1 == Tabla1.clases && ListaSimbolos.get(z).bandera == Tabla1.bandera)
+							{
+								
+										System.out.println("ERROR ya hay una funcion que se llama igual" );
+							}
+							else
+							{
+								ListaSimbolos.add(Tabla1);
+								break;
+							}
+						} 
+					}
+
+					:}
+					| Type:t IDENTIFICADOR:i PARENTESIS  StmtBlock 
+								{:
+						if (ManejarClase == true)
+					{
+						TablaSimbolos Tabla1 = new TablaSimbolos(i.toString(), t.toString(), "", 3, cont, 0);
+						for(int z=0; z < ListaSimbolos.size(); z++)
+						{
+							if(ListaSimbolos.get(z).nombre == Tabla1.nombre && ListaSimbolos.get(z).clases == Tabla1.clases && ListaSimbolos.get(z).bandera == Tabla1.bandera)
+							{
+								
+										System.out.println("ERROR ya hay una funcion que se llama igual" );
+							}
+							else
+							{
+								ListaSimbolos.add(Tabla1);
+								break;
+							}
+						} 
+					}
+					else
+					{
+						TablaSimbolos Tabla1 = new TablaSimbolos(i.toString(), t.toString(), "", 3, cont+1, 0);
+						for(int z=0; z < ListaSimbolos.size(); z++)
+						{
+							if(ListaSimbolos.get(z).nombre == Tabla1.nombre && (ListaSimbolos.get(z).clases)+1 == Tabla1.clases && ListaSimbolos.get(z).bandera == Tabla1.bandera)
+							{
+								
+										System.out.println("ERROR ya hay una funcion que se llama igual" );
+							}
+							else
+							{
+								ListaSimbolos.add(Tabla1);
+								break;
+							}
+						} 
+					}
+					:}
+					| VOID:t IDENTIFICADOR:i PARENTESIS StmtBlock
+					{:
+						if (ManejarClase == true)
+					{
+						TablaSimbolos Tabla1 = new TablaSimbolos(i.toString(), t.toString(), "", 3, cont, 0);
+						for(int z=0; z < ListaSimbolos.size(); z++)
+						{
+							if(ListaSimbolos.get(z).nombre == Tabla1.nombre && ListaSimbolos.get(z).clases == Tabla1.clases && ListaSimbolos.get(z).bandera == Tabla1.bandera)
+							{
+								
+										System.out.println("ERROR ya hay una funcion que se llama igual" );
+							}
+							else
+							{
+								ListaSimbolos.add(Tabla1);
+								break;
+							}
+						} 
+					}
+					else
+					{
+						TablaSimbolos Tabla1 = new TablaSimbolos(i.toString(), t.toString(), "", 3, cont+1, 0);
+						for(int z=0; z < ListaSimbolos.size(); z++)
+						{
+							if(ListaSimbolos.get(z).nombre == Tabla1.nombre && (ListaSimbolos.get(z).clases)+1 == Tabla1.clases && ListaSimbolos.get(z).bandera == Tabla1.bandera)
+							{
+								
+										System.out.println("ERROR ya hay una funcion que se llama igual" );
+							}
+							else
+							{
+								ListaSimbolos.add(Tabla1);
+								break;
+							}
+						} 
+					}
+
+					:} 
 					;
 
-	Formals ::= Variable Formals2
+	Formals ::= Variable:v Formals2:f
+				{:
+				    cont1=2;
+					System.out.println(" Formals=   " + v +" "+ f ); 
+					if(f!=null)
+					{
+						if (v.equals(f)) 
+						{
+							System.out.println(" Es el mismo tipo" ); 
+							RESULT = v;
+						}
+						else
+						{
+							System.out.println("Error no es el mismo tipo"); 
+							RESULT="n";
+						}
+					}
+					else
+					{
+						System.out.println(" No existe formals2" );
+						RESULT=v;
+					}
+
+					for(int i=0; i < ListaTemporal.size(); i++)
+					{
+						ListaTemporal.get(i).bparametro = 1;
+					}
+				:}
 				| /*vacio*/
 				;
 				
-	Formals2 ::=COMA Variable Formals2 
+	Formals2 ::=COMA Variable:v Formals2:f 
+				{:
+                    cont1=2;
+					System.out.println(" Formals2=   " + v + " " +f );
+					
+					if(f!=null)
+					{
+						if (v.equals(f))
+						{
+						
+							System.out.println(" Es el mismo tipo" ); 
+							RESULT = v;
+						}
+						else
+						{
+							System.out.println("Error no es el mismo tipo"); 
+							RESULT = "n";
+						}
+					}
+					else
+					{
+						RESULT = v;
+					}
+					
+				:}
 				| /*vacio*/
 				;
 				
-	ClassDecl ::= CLASS IDENTIFICADOR ClassDecl2 ClassDecl3  LLAVEIZQ  Field2 LLAVEDER
-				| CLASS IDENTIFICADOR ClassDecl2 ClassDecl3  LLAVES   
+	ClassDecl ::= CLASS IDENTIFICADOR:i ClassDecl2 ClassDecl3  LLAVEIZQ  Field2 LLAVEDER
+				{:
+					
+					TablaSimbolos Tabla =new TablaSimbolos(i.toString(),"class","",4,cont, 0);
+					if(Tabla.VerificarClase(i.toString(), ListaSimbolos).equals(true))
+					{
+						System.out.println(" El ID ya existe"); 
+					}
+					else
+					{
+						ListaSimbolos.add(Tabla);
+						
+					}
+					
+                    //RESULT = t;
+					System.out.println(" CLASE=   " +" "+ i); 
+					cont1=1;
+				:}
+				| CLASS IDENTIFICADOR:i ClassDecl2 ClassDecl3  LLAVES
+				{:
+					
+					TablaSimbolos Tabla =new TablaSimbolos(i.toString(),"class","",4,cont, 0);
+					if(Tabla.VerificarClase(i.toString(), ListaSimbolos).equals(true))
+					{
+						System.out.println(" El ID ya existe"); 
+					}
+					else
+					{
+						ListaSimbolos.add(Tabla);
+						
+					}
+					
+                    //RESULT = t;
+					System.out.println(" CLASE=   " +" "+ i); 
+					cont1=1;
+				:}
 				;
 				
 	ClassDecl2 ::= EXTENDS IDENTIFICADOR 
@@ -158,6 +516,7 @@ non terminal Object		Program, Decl, Program2, VariableDecl, FunctionDecl, ClassD
 					;
 					
 	ClassDecl3 ::= IMPLEMENTS IDENTIFICADOR Ident2 
+				|/*vacio*/ 
 				;
 				
 	Ident2 ::= COMA IDENTIFICADOR Ident2 
@@ -169,7 +528,45 @@ non terminal Object		Program, Decl, Program2, VariableDecl, FunctionDecl, ClassD
 				;
 				
 	Field ::= VariableDecl 
+			{:
+				if(Clasemas==false)
+					{
+						cont++;
+						Clasemas=true;
+						ManejarClase = true;
+					}
+					for(int z=0; z < ListaTemporal.size(); z++)
+					{
+						ListaTemporal.get(z).clases = cont;
+						TablaSimbolos Tabla = new TablaSimbolos(ListaTemporal.get(z).nombre, ListaTemporal.get(z).tipo, ListaTemporal.get(z).valor, ListaTemporal.get(z).bandera, ListaTemporal.get(z).clases, 0);
+						if(Tabla.VerificarVariable(ListaTemporal.get(z).nombre, ListaSimbolos, cont).equals(true))
+						{
+							System.out.println(" El ID ya existe"); 
+						}
+						else
+						{
+							ListaSimbolos.add(ListaTemporal.get(z));
+							
+						}
+						
+					} 
+					ListaTemporal.clear();
+			:}
 			| FunctionDecl
+			{:
+					if(Clasemas==false)
+					{
+						cont++;
+						Clasemas=true;
+					}
+					for(int i=0; i < ListaTemporal.size(); i++)
+					{
+						ListaTemporal.get(i).clases = cont;
+						ListaTemporal.get(i).bandera = 2;
+						ListaSimbolos.add(ListaTemporal.get(i));
+					}
+					ListaTemporal.clear(); 
+			:}
 			;
 			
 	InterfaceDecl ::= INTERFACE IDENTIFICADOR LLAVEIZQ InterfaceDecl2 LLAVEDER
@@ -209,6 +606,9 @@ non terminal Object		Program, Decl, Program2, VariableDecl, FunctionDecl, ClassD
 			| ForStmt 
 			| BreakStmt 
 			| ReturnStmt 
+				{:
+					 
+				:}
 			| PrintStmt 
 			| StmtBlock
 			;
@@ -243,21 +643,857 @@ non terminal Object		Program, Decl, Program2, VariableDecl, FunctionDecl, ClassD
 			| /*vacio*/ 
 			;
 			
-	Expr ::= LValue IGUAL Expr 
-			| Constant 
+	Expr ::= LValue:l IGUAL:q Expr:t
+			{:
+				String resultado;
+				for(int i=0; i < ListaTemporal.size(); i++)
+					{
+							if(ListaTemporal.get(i).nombre.equals(l.toString()))
+							{
+								
+								if(t.toString().equals(""))
+								{
+									
+								}
+								else if(ListaTemporal.get(i).tipo.equals("int")||ListaTemporal.get(i).tipo.equals("double") && Operaciones.isNumeric(t.toString())==true )
+								{
+									resultado=Operaciones.Validar(l.toString(), t.toString());
+									TablaSimbolos Tabla = new TablaSimbolos(ListaTemporal.get(i).nombre, ListaTemporal.get(i).tipo, resultado, ListaTemporal.get(i).bandera, ListaTemporal.get(i).clases, ListaTemporal.get(i).bparametro);
+									ListaTemporal.add(Tabla);
+								}
+								else if(ListaTemporal.get(i).tipo.equals("string") && Operaciones.isNumeric(t.toString())==false )
+								{
+									resultado=Operaciones.Validar(l.toString(), t.toString());
+									TablaSimbolos Tabla = new TablaSimbolos(ListaTemporal.get(i).nombre, ListaTemporal.get(i).tipo, resultado, ListaTemporal.get(i).bandera, ListaTemporal.get(i).clases, ListaTemporal.get(i).bparametro);
+									ListaTemporal.add(Tabla);
+								}
+								else if(ListaTemporal.get(i).tipo.equals("bool") && t.toString().equals("false") || t.toString().equals("true") )
+								{
+									resultado=Operaciones.Validar(l.toString(), t.toString());
+									TablaSimbolos Tabla = new TablaSimbolos(ListaTemporal.get(i).nombre, ListaTemporal.get(i).tipo, resultado, ListaTemporal.get(i).bandera, ListaTemporal.get(i).clases, ListaTemporal.get(i).bparametro);
+									ListaTemporal.add(Tabla);
+								}
+								else
+								{
+									System.out.println(" El valor asignado no es el mismo tipo de la variable"); 
+								}
+								Correcto=true;
+								VerAmbito=true;
+								break;
+							}
+						
+					}
+				if(VerAmbito==false)
+				{
+					for(int i=0; i < ListaSimbolos.size(); i++)
+					{
+						if(ListaSimbolos.get(i).nombre.equals(l.toString()) && ListaSimbolos.get(i).bandera==1 && ListaSimbolos.get(i).clases==cont )
+						{
+							
+							if(t.toString().equals(""))
+								{
+									
+								}
+							else if(ListaSimbolos.get(i).tipo.equals("int")||ListaSimbolos.get(i).tipo.equals("double") && Operaciones.isNumeric(t.toString())==true )
+								{
+									resultado=Operaciones.Validar(l.toString(), t.toString() );
+									TablaSimbolos Tabla = new TablaSimbolos(ListaSimbolos.get(i).nombre, ListaSimbolos.get(i).tipo, resultado, ListaSimbolos.get(i).bandera, ListaSimbolos.get(i).clases, ListaSimbolos.get(i).bparametro);
+									ListaSimbolos.add(Tabla);
+								}
+							else if(ListaSimbolos.get(i).tipo.equals("string") && Operaciones.isNumeric(t.toString())==false )
+								{
+									resultado=Operaciones.Validar(l.toString(), t.toString() );
+									TablaSimbolos Tabla = new TablaSimbolos(ListaSimbolos.get(i).nombre, ListaSimbolos.get(i).tipo, resultado, ListaSimbolos.get(i).bandera, ListaSimbolos.get(i).clases, ListaSimbolos.get(i).bparametro);
+									ListaSimbolos.add(Tabla);
+								}
+							else if(ListaSimbolos.get(i).tipo.equals("bool") && t.toString().equals("false") || t.toString().equals("true") )
+								{
+									resultado=Operaciones.Validar(l.toString(), t.toString() );
+									TablaSimbolos Tabla = new TablaSimbolos(ListaSimbolos.get(i).nombre, ListaSimbolos.get(i).tipo, resultado, ListaSimbolos.get(i).bandera, ListaSimbolos.get(i).clases, ListaSimbolos.get(i).bparametro);
+									ListaSimbolos.add(Tabla);
+								}
+							else
+								{
+									System.out.println(" El valor asignado no es el mismo tipo de la variable"); 	
+									
+								}
+							Correcto=true;
+							VerAmbito=true;
+							break;
+						}
+					
+					}
+				}	
+				
+				if(VerAmbito==false)
+				{
+				for(int i=0; i < ListaSimbolos.size(); i++)
+					{
+							if(ListaSimbolos.get(i).nombre.equals(l.toString()) && ListaSimbolos.get(i).bandera==1 && ListaSimbolos.get(i).clases==0 )
+							{
+								if(t.toString().equals(""))
+								{
+									
+								}
+								else if(ListaSimbolos.get(i).tipo.equals("int")||ListaSimbolos.get(i).tipo.equals("double") && Operaciones.isNumeric(t.toString())==true )
+								{
+								
+									resultado=Operaciones.Validar(l.toString(), t.toString() );
+									TablaSimbolos Tabla = new TablaSimbolos(ListaSimbolos.get(i).nombre, ListaSimbolos.get(i).tipo, resultado, ListaSimbolos.get(i).bandera, ListaSimbolos.get(i).clases, ListaSimbolos.get(i).bparametro);
+									ListaSimbolos.add(Tabla);
+								
+								}
+								else if(ListaSimbolos.get(i).tipo.equals("string") && Operaciones.isNumeric(t.toString())==false )
+								{
+									resultado=Operaciones.Validar(l.toString(), t.toString() );
+									TablaSimbolos Tabla = new TablaSimbolos(ListaSimbolos.get(i).nombre, ListaSimbolos.get(i).tipo, resultado, ListaSimbolos.get(i).bandera, ListaSimbolos.get(i).clases, ListaSimbolos.get(i).bparametro);
+									ListaSimbolos.add(Tabla);
+								}
+								else
+								{
+									System.out.println(" El valor asignado no es el mismo tipo de la variable");						
+								
+								}
+								Correcto=true;
+								break;
+							}
+						
+					}
+			
+			
+				}
+				VerAmbito=false;
+				if (Correcto==false)
+				{
+				
+					System.out.println(" Error no existe la variable que desea asignarle valor"); 
+					
+				}
+				Correcto=false;
+				
+				
+				
+			:}
+			| Constant:e
+			{:
+				RESULT = e;	 
+			:}
 			| Call 
-			| THIS 
-			| LValue 
-			| PARENIZQ Expr PARENDER 
-			| Expr SUMA Expr 
-			| Expr RESTA Expr 
-			| Expr MULTIPLICACION Expr 
-			| Expr DIVISION Expr 
-			| Expr PORCENTAJE Expr 
-			| RESTA Expr 
+			| THIS:e
+			{:
+				RESULT = e;
+					
+			:}
+			| LValue:e
+			{:
+				RESULT = e;
+					
+			:}
+			| PARENIZQ:i Expr:e PARENDER:d
+			{:
+				RESULT = i.toString()+e.toString()+d.toString();
+					
+			:}
+			| Expr:m SUMA Expr:t
+			{:
+				String valor="";
+				if(Operaciones.isNumeric(m.toString())==true && Operaciones.isNumeric(t.toString())==true)
+				{
+				RESULT= m+ " + " +t;
+				}
+				else
+				{
+					if(Operaciones.isNumeric(m.toString())==true)
+					{
+						if(t.toString().contains("\""))
+						{
+							System.out.println(" Error los tipos no son compatibles"); 
+							RESULT="";
+						}
+						else
+						{
+						
+							for(int i=0; i < ListaTemporal.size(); i++)
+							{
+								if(ListaTemporal.get(i).nombre.equals(t.toString()))
+								{
+									
+									valor=ListaTemporal.get(i).valor;
+										
+									VerAmbito=true;
+									
+								}
+							
+							}
+							
+							
+							if(VerAmbito==false)
+							{
+							
+								for(int i=0; i < ListaSimbolos.size(); i++)
+								{
+									
+									if(ListaSimbolos.get(i).nombre.equals(t.toString()) && ListaSimbolos.get(i).bandera==1 && ListaSimbolos.get(i).clases==cont )
+									{
+										valor=ListaSimbolos.get(i).valor;
+									
+										VerAmbito=true;
+										
+									}
+								
+								}
+								
+								
+							}	
+				
+							if(VerAmbito==false)
+							{
+							
+								for(int i=0; i < ListaSimbolos.size(); i++)
+									{
+									
+											if(ListaSimbolos.get(i).nombre.equals(m.toString()) && ListaSimbolos.get(i).bandera==1 && ListaSimbolos.get(i).clases==0 )
+											{
+											
+												valor=ListaSimbolos.get(i).valor;
+												
+											}
+										
+									}
+									
+
+							}
+							if (valor=="")
+								{
+									System.out.println(" Error la variable no tiene valor asignado"); 
+									RESULT="";
+									
+								}
+								else
+								{
+								RESULT= m+ " + " +valor;
+								}
+								VerAmbito=false;
+						}
+						
+					}
+					else if(Operaciones.isNumeric(t.toString())==true)
+					{
+						if(m.toString().contains("\""))
+						{
+							System.out.println(" Error los tipos no son compatibles"); 
+							RESULT="";
+						}
+						else
+						{
+						
+						if(VerAmbito==false)
+							{
+						
+							for(int i=0; i < ListaTemporal.size(); i++)
+							{
+								if(ListaTemporal.get(i).nombre.equals(m.toString()))
+								{
+									
+									valor=ListaTemporal.get(i).valor;
+										
+									VerAmbito=true;
+									
+								}
+							
+							}
+							
+							}
+						
+							if(VerAmbito==false)
+							{
+							
+								for(int i=0; i < ListaSimbolos.size(); i++)
+								{
+									
+									if(ListaSimbolos.get(i).nombre.equals(m.toString()) && ListaSimbolos.get(i).bandera==1 && ListaSimbolos.get(i).clases==cont )
+									{
+										valor=ListaSimbolos.get(i).valor;
+									
+										VerAmbito=true;
+										
+									}
+								
+								}	
+								
+							}	
+				
+							if(VerAmbito==false)
+							{
+							
+								for(int i=0; i < ListaSimbolos.size(); i++)
+									{
+									
+											if(ListaSimbolos.get(i).nombre.equals(m.toString()) && ListaSimbolos.get(i).bandera==1 && ListaSimbolos.get(i).clases==0 )
+											{
+											
+												valor=ListaSimbolos.get(i).valor;
+												
+											}
+										
+									}
+									
+
+							}
+							if (valor=="")
+								{
+									System.out.println(" Error la variable no tiene valor asignado"); 
+									RESULT="";
+								
+								}
+							else
+								{
+								RESULT= valor+ " + " +t;
+								}
+							
+								VerAmbito=false;
+								
+							
+						}
+					}
+					else //los dos son string 
+					{
+						RESULT=  m.toString()+t.toString();
+							
+					}
+					
+				}
+				
+			:}
+			| Expr:m RESTA Expr:t 
+			{:
+					String valor="";
+				if(Operaciones.isNumeric(m.toString())==true && Operaciones.isNumeric(t.toString())==true)
+				{
+				RESULT= m+ " - " +t;
+				}
+				else
+				{
+					if(Operaciones.isNumeric(m.toString())==true)
+					{
+						if(t.toString().contains("\""))
+						{
+							System.out.println(" Error los tipos no son compatibles"); 
+							RESULT="";
+						}
+						else
+						{
+						
+							for(int i=0; i < ListaTemporal.size(); i++)
+							{
+								if(ListaTemporal.get(i).nombre.equals(t.toString()))
+								{
+									
+									valor=ListaTemporal.get(i).valor;
+										
+									VerAmbito=true;
+									
+								}
+							
+							}
+							
+							
+							if(VerAmbito==false)
+							{
+							
+								for(int i=0; i < ListaSimbolos.size(); i++)
+								{
+									
+									if(ListaSimbolos.get(i).nombre.equals(t.toString()) && ListaSimbolos.get(i).bandera==1 && ListaSimbolos.get(i).clases==cont )
+									{
+										valor=ListaSimbolos.get(i).valor;
+									
+										VerAmbito=true;
+										
+									}
+								
+								}
+								
+								
+							}	
+				
+							if(VerAmbito==false)
+							{
+							
+								for(int i=0; i < ListaSimbolos.size(); i++)
+									{
+									
+											if(ListaSimbolos.get(i).nombre.equals(m.toString()) && ListaSimbolos.get(i).bandera==1 && ListaSimbolos.get(i).clases==0 )
+											{
+											
+												valor=ListaSimbolos.get(i).valor;
+												
+											}
+										
+									}
+									
+
+							}
+							if (valor=="")
+								{
+									System.out.println(" Error la variable no tiene valor asignado"); 
+									RESULT="";
+									
+								}
+								else
+								{
+								RESULT= m+ " - " +valor;
+								}
+								VerAmbito=false;
+						}
+						
+					}
+					else if(Operaciones.isNumeric(t.toString())==true)
+					{
+						if(m.toString().contains("\""))
+						{
+							System.out.println(" Error los tipos no son compatibles"); 
+							RESULT="";
+						}
+						else
+						{
+						
+						if(VerAmbito==false)
+							{
+						
+							for(int i=0; i < ListaTemporal.size(); i++)
+							{
+								if(ListaTemporal.get(i).nombre.equals(m.toString()))
+								{
+									
+									valor=ListaTemporal.get(i).valor;
+										
+									VerAmbito=true;
+									
+								}
+							
+							}
+							
+							}
+						
+							if(VerAmbito==false)
+							{
+							
+								for(int i=0; i < ListaSimbolos.size(); i++)
+								{
+									
+									if(ListaSimbolos.get(i).nombre.equals(m.toString()) && ListaSimbolos.get(i).bandera==1 && ListaSimbolos.get(i).clases==cont )
+									{
+										valor=ListaSimbolos.get(i).valor;
+									
+										VerAmbito=true;
+										
+									}
+								
+								}	
+								
+							}	
+				
+							if(VerAmbito==false)
+							{
+							
+								for(int i=0; i < ListaSimbolos.size(); i++)
+									{
+									
+											if(ListaSimbolos.get(i).nombre.equals(m.toString()) && ListaSimbolos.get(i).bandera==1 && ListaSimbolos.get(i).clases==0 )
+											{
+											
+												valor=ListaSimbolos.get(i).valor;
+												
+											}
+										
+									}
+									
+
+							}
+							if (valor=="")
+								{
+									System.out.println(" Error la variable no tiene valor asignado"); 
+									RESULT="";
+								
+								}
+							else
+								{
+								RESULT= valor+ " - " +t;
+								}
+							
+								VerAmbito=false;
+								
+							
+						}
+					}
+					else //los dos son string 
+					{
+						System.out.println(" Error no se pueden restar dos strings"); 
+						RESULT="";
+							
+					}
+					
+				}
+			:}
+			| Expr:m MULTIPLICACION Expr:t
+			{:
+				String valor="";
+				if(Operaciones.isNumeric(m.toString())==true && Operaciones.isNumeric(t.toString())==true)
+				{
+				RESULT= m+ " * " +t;
+				}
+				else
+				{
+					if(Operaciones.isNumeric(m.toString())==true)
+					{
+						if(t.toString().contains("\""))
+						{
+							System.out.println(" Error los tipos no son compatibles"); 
+							RESULT="";
+						}
+						else
+						{
+						
+							for(int i=0; i < ListaTemporal.size(); i++)
+							{
+								if(ListaTemporal.get(i).nombre.equals(t.toString()))
+								{
+									
+									valor=ListaTemporal.get(i).valor;
+										
+									VerAmbito=true;
+									
+								}
+							
+							}
+							
+							
+							if(VerAmbito==false)
+							{
+							
+								for(int i=0; i < ListaSimbolos.size(); i++)
+								{
+									
+									if(ListaSimbolos.get(i).nombre.equals(t.toString()) && ListaSimbolos.get(i).bandera==1 && ListaSimbolos.get(i).clases==cont )
+									{
+										valor=ListaSimbolos.get(i).valor;
+									
+										VerAmbito=true;
+										
+									}
+								
+								}
+								
+								
+							}	
+				
+							if(VerAmbito==false)
+							{
+							
+								for(int i=0; i < ListaSimbolos.size(); i++)
+									{
+									
+											if(ListaSimbolos.get(i).nombre.equals(m.toString()) && ListaSimbolos.get(i).bandera==1 && ListaSimbolos.get(i).clases==0 )
+											{
+											
+												valor=ListaSimbolos.get(i).valor;
+												
+											}
+										
+									}
+									
+
+							}
+							if (valor=="")
+								{
+									System.out.println(" Error la variable no tiene valor asignado"); 
+									RESULT="";
+									
+								}
+								else
+								{
+								RESULT= m+ " * " +valor;
+								}
+								VerAmbito=false;
+						}
+						
+					}
+					else if(Operaciones.isNumeric(t.toString())==true)
+					{
+						if(m.toString().contains("\""))
+						{
+							System.out.println(" Error los tipos no son compatibles"); 
+							RESULT="";
+						}
+						else
+						{
+						
+						if(VerAmbito==false)
+							{
+						
+							for(int i=0; i < ListaTemporal.size(); i++)
+							{
+								if(ListaTemporal.get(i).nombre.equals(m.toString()))
+								{
+									
+									valor=ListaTemporal.get(i).valor;
+										
+									VerAmbito=true;
+									
+								}
+							
+							}
+							
+							}
+						
+							if(VerAmbito==false)
+							{
+							
+								for(int i=0; i < ListaSimbolos.size(); i++)
+								{
+									
+									if(ListaSimbolos.get(i).nombre.equals(m.toString()) && ListaSimbolos.get(i).bandera==1 && ListaSimbolos.get(i).clases==cont )
+									{
+										valor=ListaSimbolos.get(i).valor;
+									
+										VerAmbito=true;
+										
+									}
+								
+								}	
+								
+							}	
+				
+							if(VerAmbito==false)
+							{
+							
+								for(int i=0; i < ListaSimbolos.size(); i++)
+									{
+									
+											if(ListaSimbolos.get(i).nombre.equals(m.toString()) && ListaSimbolos.get(i).bandera==1 && ListaSimbolos.get(i).clases==0 )
+											{
+											
+												valor=ListaSimbolos.get(i).valor;
+												
+											}
+										
+									}
+									
+
+							}
+							if (valor=="")
+								{
+									System.out.println(" Error la variable no tiene valor asignado"); 
+									RESULT="";
+								
+								}
+							else
+								{
+								RESULT= valor+ " * " +t;
+								}
+							
+								VerAmbito=false;
+								
+							
+						}
+					}
+					else //los dos son string 
+					{
+						System.out.println(" Error no se pueden multiplicar dos strings"); 
+						RESULT="";
+							
+					}
+					
+				}
+				
+			:}
+			| Expr:m DIVISION Expr:t 
+			{:
+				String valor="";
+				if(Operaciones.isNumeric(m.toString())==true && Operaciones.isNumeric(t.toString())==true)
+				{
+				RESULT= m+ " / " +t;
+				}
+				else
+				{
+					if(Operaciones.isNumeric(m.toString())==true)
+					{
+						if(t.toString().contains("\""))
+						{
+							System.out.println(" Error los tipos no son compatibles"); 
+							RESULT="";
+						}
+						else
+						{
+						
+							for(int i=0; i < ListaTemporal.size(); i++)
+							{
+								if(ListaTemporal.get(i).nombre.equals(t.toString()))
+								{
+									
+									valor=ListaTemporal.get(i).valor;
+										
+									VerAmbito=true;
+									
+								}
+							
+							}
+							
+							
+							if(VerAmbito==false)
+							{
+							
+								for(int i=0; i < ListaSimbolos.size(); i++)
+								{
+									
+									if(ListaSimbolos.get(i).nombre.equals(t.toString()) && ListaSimbolos.get(i).bandera==1 && ListaSimbolos.get(i).clases==cont )
+									{
+										valor=ListaSimbolos.get(i).valor;
+									
+										VerAmbito=true;
+										
+									}
+								
+								}
+								
+								
+							}	
+				
+							if(VerAmbito==false)
+							{
+							
+								for(int i=0; i < ListaSimbolos.size(); i++)
+									{
+									
+											if(ListaSimbolos.get(i).nombre.equals(m.toString()) && ListaSimbolos.get(i).bandera==1 && ListaSimbolos.get(i).clases==0 )
+											{
+											
+												valor=ListaSimbolos.get(i).valor;
+												
+											}
+										
+									}
+									
+
+							}
+							if (valor=="")
+								{
+									System.out.println(" Error la variable no tiene valor asignado"); 
+									RESULT="";
+									
+								}
+								else
+								{
+								RESULT= m+ " / " +valor;
+								}
+								VerAmbito=false;
+						}
+						
+					}
+					else if(Operaciones.isNumeric(t.toString())==true)
+					{
+						if(m.toString().contains("\""))
+						{
+							System.out.println(" Error los tipos no son compatibles"); 
+							RESULT="";
+						}
+						else
+						{
+						
+						if(VerAmbito==false)
+							{
+						
+							for(int i=0; i < ListaTemporal.size(); i++)
+							{
+								if(ListaTemporal.get(i).nombre.equals(m.toString()))
+								{
+									
+									valor=ListaTemporal.get(i).valor;
+										
+									VerAmbito=true;
+									
+								}
+							
+							}
+							
+							}
+						
+							if(VerAmbito==false)
+							{
+							
+								for(int i=0; i < ListaSimbolos.size(); i++)
+								{
+									
+									if(ListaSimbolos.get(i).nombre.equals(m.toString()) && ListaSimbolos.get(i).bandera==1 && ListaSimbolos.get(i).clases==cont )
+									{
+										valor=ListaSimbolos.get(i).valor;
+									
+										VerAmbito=true;
+										
+									}
+								
+								}	
+								
+							}	
+				
+							if(VerAmbito==false)
+							{
+							
+								for(int i=0; i < ListaSimbolos.size(); i++)
+									{
+									
+											if(ListaSimbolos.get(i).nombre.equals(m.toString()) && ListaSimbolos.get(i).bandera==1 && ListaSimbolos.get(i).clases==0 )
+											{
+											
+												valor=ListaSimbolos.get(i).valor;
+												
+											}
+										
+									}
+									
+
+							}
+							if (valor=="")
+								{
+									System.out.println(" Error la variable no tiene valor asignado"); 
+									RESULT="";
+								
+								}
+							else
+								{
+								RESULT= valor+ " / " +t;
+								}
+							
+								VerAmbito=false;
+								
+							
+						}
+					}
+					else //los dos son string 
+					{
+						System.out.println(" Error no se pueden dividir dos strings"); 
+						RESULT="";
+							
+					}
+					
+				}
+				
+			:}
+			| Expr:m PORCENTAJE Expr:t 
+			{:
+				RESULT="";	
+			:}
+			| RESTA:r Expr:e
+			{:
+				RESULT=e;	
+			:}
 			| Expr MENOR Expr 
 			| Expr MENORIGUAL Expr 
-			| Expr MAYOR Expr 
+			| Expr MAYOR Expr
+			{:
+					
+			:}
 			| Expr MAYORIGUAL Expr 
 			| Expr IGUALDAD Expr 
 			| Expr DIFERENTE Expr 
@@ -278,8 +1514,19 @@ non terminal Object		Program, Decl, Program2, VariableDecl, FunctionDecl, ClassD
 			| Expr PUNTO LibCall PARENIZQ Actuals PARENDER
 			;
 			
-	LValue ::= IDENTIFICADOR 
-			| Expr PUNTO IDENTIFICADOR 
+	LValue ::= IDENTIFICADOR:e
+			{:
+				RESULT = e;
+					 
+			:}
+			| Expr PUNTO IDENTIFICADOR:e
+			{:
+				RESULT = e;
+					 
+			:}			
+			
+			
+			
 			| Expr CORCHIZQ Expr CORCHDER
 			;
 			
@@ -293,11 +1540,31 @@ non terminal Object		Program, Decl, Program2, VariableDecl, FunctionDecl, ClassD
 				| /*vacio*/
 				;
 				
-	Constant ::= CONSTENTERO
-				| CONSTDOUBLE 
-				| CONSTBOOLEANAS 
-				| CONSTSTRING 
-				| NULL
+	Constant ::= CONSTENTERO:e
+				{:
+                    RESULT = e;
+					
+				:}
+				| CONSTDOUBLE :e
+				{:
+                    RESULT = e;
+					
+				:}
+				| CONSTBOOLEANAS :e
+				{:
+                    RESULT = e;
+					
+				:}
+				| CONSTSTRING :e
+				{:
+                    RESULT = e;
+					
+				:}
+				| NULL :e
+				{:
+                    RESULT = e;
+					
+				:}
 				;
 
  

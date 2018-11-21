@@ -33,6 +33,7 @@ import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.util.Scanner;
 import java.io.File;
+import java.util.ArrayList;
 
 
 /**
@@ -47,6 +48,8 @@ public class interfaz extends javax.swing.JFrame {
     public final static int GENERAR = 1;
     public final static int EJECUTAR = 2;
     public final static int SALIR = 3;
+    
+    List<TablaSimbolos> ListaSimbolos= new ArrayList<TablaSimbolos>();
     
     static String ruta;
    
@@ -212,6 +215,7 @@ public class interfaz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
         if ("".equals(jTextField1.getText())) 
         {
            JOptionPane.showMessageDialog(null, "No ha seleccionado un archivo");
