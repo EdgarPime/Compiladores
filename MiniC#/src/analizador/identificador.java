@@ -7,7 +7,7 @@ package analizador;
 
 /**
  *
- * @author Carlos
+ * @author Pimentel
  */
 public class identificador {
     public String nombre;

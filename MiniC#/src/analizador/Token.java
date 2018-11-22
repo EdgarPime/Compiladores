@@ -7,7 +7,7 @@ package analizador;
 
 /**
  *
- * @author Carlos
+ * @author Pimentel
  */
 public enum Token {
     T_CONST_BOOLEANO, T_CONST_ENTERO,T_CONST_DOUBLE,T_CONST_STRING,

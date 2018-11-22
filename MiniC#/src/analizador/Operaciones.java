@@ -41,7 +41,7 @@ public class Operaciones {
             boolean Variable = isNumeric(Valor);
                 if (Variable == true)
                 {
-                    System.out.println("  Nuevo valor para el identificador "+Lvalue+ " -> Valor: "+Valor + " -> Ambito Actual: ");
+                  
                     return Valor;
                          
                     

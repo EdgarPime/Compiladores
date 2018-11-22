@@ -1,24 +1,19 @@
 Nombre del Ambito      |       Tipo del Datos       |       Valor del Ambito      |     Tipo del Ambito      |       Numero de clase     |       Si es parametro
-My_String              |               string               |                             |           1            |               0             |               0
-a1              |               int               |                             |           1            |               1             |               0
-a1              |               int               |               2              |           1            |               1             |               0
-My_String              |               string               |               "This is a string"              |           1            |               0             |               0
-f1              |               int               |                             |           3            |               1             |               0
-a              |               int               |                             |           2            |               1             |               1
-b              |               int               |                             |           2            |               1             |               1
-c              |               int               |                             |           2            |               1             |               1
-d              |               double               |                             |           2            |               1             |               0
-d              |               double               |               1              |           2            |               1             |               0
-a              |               int               |               "fdf" +"dfd"              |           2            |               1             |               1
-a1              |               int               |               2              |           1            |               1             |               0
-a1              |               int               |               2.0E-4              |           1            |               1             |               0
-proc1              |               void               |                             |           3            |               1             |               0
-y              |               double               |                             |           2            |               1             |               1
-Parser              |               class               |                             |           4            |               1             |               0
-main              |               void               |                             |           3            |               0             |               0
-m1              |               int               |                             |           2            |               0             |               0
-m2              |               int               |                             |           2            |               0             |               0
-m3              |               double               |                             |           2            |               0             |               0
-MyParser              |               Parser               |                             |           2            |               0             |               0
-m2              |               int               |               MyParser              |           2            |               0             |               0
-m2              |               int               |               1              |           2            |               0             |               0
+global1              |               int               |                             |           1            |               0             |               0
+global2              |               int               |                             |           1            |               0             |               0
+global3              |               double               |                             |           1            |               0             |               0
+perimeter              |               double               |                             |           1            |               1             |               0
+CalculatePerimeter              |               void               |                             |           3            |               1             |               0
+sideA              |               int               |                             |           2            |               1             |               1
+sideB              |               int               |                             |           2            |               1             |               1
+perimeter              |               double               |                             |           2            |               1             |               0
+CalculateArea              |               double               |                             |           3            |               1             |               0
+sideA              |               int               |                             |           2            |               1             |               1
+sideB              |               int               |                             |           2            |               1             |               1
+area              |               double               |                             |           2            |               1             |               0
+ReturnSumSides              |               int               |                             |           3            |               1             |               0
+sideA              |               int               |                             |           2            |               1             |               1
+sideB              |               int               |                             |           2            |               1             |               1
+sum              |               int               |                             |           2            |               1             |               0
+sum              |               int               |               sideAsideB              |           2            |               1             |               0
+Rectangule              |               class               |                             |           4            |               1             |               0

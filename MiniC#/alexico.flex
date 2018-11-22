@@ -66,6 +66,8 @@ MALLOC= ("Malloc")
 READLINE= ("ReadLine")
 GETBYTE= ("GetByte")
 SETBYTE= ("SetByte")
+CONSTANTE= ("const")
+INCLUDE= ("include")
 
 //TOKEN PARA OPERADORES Y CARACTERES DE PUNTUACION
 SUMA=("+")
@@ -95,7 +97,7 @@ LLAVEDER=("}")
 CORCHETES=("[]")
 PARENTESIS=("()")
 LLAVES=("{}")
-
+NUMERAL=("#")
 ENTER=[\n]
 WHITE=[ \t\r\n]
 
@@ -173,6 +175,8 @@ Entero = 0 | [1-9][0-9]*
 	("//"[^\n]*)   { /* ignora el espacio */ } 	
 					  
 	//TOKEN DE PALABRAS RESERVADAS
+	{CONSTANTE} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
+                      return symbol(sym.CONSTANTE,  (yytext())); }
 	{VOID} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.VOID,  (yytext())); }
 	{INT} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
@@ -227,6 +231,8 @@ Entero = 0 | [1-9][0-9]*
 					  
 					  
   //TOKEN PARA OPERADORES Y CARACTERES DE PUNTUACION
+	{NUMERAL} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
+                      return symbol(sym.NUMERAL, (yytext())); }
 	{SUMA} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
                       return symbol(sym.SUMA, (yytext())); }
 	{RESTA} {   System.out.print(yytext()+"		Linea "+yyline+"\n"); 
